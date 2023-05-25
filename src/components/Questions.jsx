@@ -1,4 +1,10 @@
-import React, { useCallback, useContext, useEffect, useState } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from "./Modal";
 import { UserContext } from "../context/UserContext";
@@ -30,6 +36,7 @@ const Questions = () => {
   const [openModal, setOpenModal] = useState(false);
   const [checkModal, setCheckModal] = useState(false);
   const [openDesc, setOpenDesc] = useState(false);
+  const textOverflow = useRef(null);
   const confirmLeavePage = useCallback((e) => {
     e.preventDefault();
     e.returnValue = "";
@@ -92,11 +99,27 @@ const Questions = () => {
         );
       }
     };
-
+    function overflowCheck() {
+      // console.log("this is containing element div", overflowDiv);
+      console.log("this is text element tag", textOverflow);
+      if (
+        textOverflow?.current?.parentElement?.clientHeight <
+        textOverflow?.current?.clientHeight
+      ) {
+        console.log("overflow");
+        // textOverflow?.current?.classList.remove("lg:text-4xl");
+        // textOverflow?.current?.classList.remove("text-2xl");
+        // textOverflow?.current?.classList.add("!lg:text-2xl");
+        // textOverflow?.current?.classList.add("!text-base");
+        textOverflow.current.style.fontSize = "1rem";
+        textOverflow.current.style.lineHeight = "1.5rem";
+      }
+    }
+    overflowCheck();
     disableBackButton();
     importSoundTitle();
     importSoundDetail();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [current]);
 
   function scrollToTop() {
@@ -172,6 +195,7 @@ const Questions = () => {
   }
 
   console.log(tour);
+
   return (
     <div className="min-h-screen w-full relative overflow-auto bg-[url(./assets/images/bg-logo_adobe_express.svg)] bg-cover bg-no-repeat">
       <Navbar />
@@ -248,6 +272,7 @@ const Questions = () => {
               <div className="flex justify-between items-center w-full gap-2">
                 <div className="flex items-center justify-center gap-6 h-20">
                   <h3
+                    ref={textOverflow}
                     className="text-2xl lg:text-4xl"
                     onCopy={(e) => e.preventDefault()} // Prevent copy
                     onCut={(e) => e.preventDefault()} // Prevent cut

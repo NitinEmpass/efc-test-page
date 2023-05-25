@@ -257,7 +257,7 @@ const Result = () => {
             <img
               src={logo}
               alt="EFC"
-              className="absolute left-[12%] lg:left-[42%] top-1 w-[80%] lg:w-[25%]"
+              className="absolute left-[12%] lg:left-[40%] top-1 w-[80%] lg:w-[25%]"
             />
             <span className="w-[90%] lg:w-[60%] mt-[10rem] flex flex-col justify-center items-center gap-5 lg:gap-10 text-2xl lg:text-5xl text-center z-10 bg-transparent text-black rounded-xl mx-auto py-5 my-5 animate-lazily ease-in-out duration-300">
               {/* <h1 className="text-gsl-light-green text-center text-5xl lg:text-7xl p-5 text-stroke">
