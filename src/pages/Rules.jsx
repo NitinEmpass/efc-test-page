@@ -113,7 +113,7 @@ const Rules = () => {
           </p>
         ) : null}
         <h1 className="text-2xl lg:text-4xl font-semibold text-center">
-          SPI Self Assessment
+          Introduction
         </h1>
         <div className="border-2 border-gsl-dark-orange w-full"></div>
         <span className="font-medium text-lg">
