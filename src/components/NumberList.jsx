@@ -6,9 +6,10 @@ export function NumberList({
   setCurrent,
   questions,
   checked,
-  checkboxArray,
   tour,
   setTour,
+  disabled,
+  setDisabled,
 }) {
   const containerRef = useRef(null);
   useEffect(() => {
@@ -45,13 +46,18 @@ export function NumberList({
         <div
           className={className}
           key={number}
-          onClick={() => setCurrent(number - 1)}
+          onClick={() => {
+            setCurrent(number - 1);
+            if (disabled === true) {
+              setDisabled(false);
+            }
+          }}
         >
           {number <= 9 ? `0${number}` : number}
         </div>
       );
     });
-  }, [/* checkboxArray , */ checked, current, questions.length, setCurrent]);
+  }, [checked, current, disabled, questions.length, setCurrent, setDisabled]);
 
   return (
     <div
@@ -87,13 +93,15 @@ export function NumberList({
         content="Item attempted"
         isTour={tour === 5 ? true : false}
         setTour={setTour}
-        className="bottom-24 left-24 rounded-bl-none"
+        className="bottom-28 left-10"
+        id="speech-bubble-bottom-left"
       />
       <CustomTour
         content="Item unattempted"
         isTour={tour === 6 ? true : false}
         setTour={setTour}
-        className="bottom-24 left-40 rounded-bl-none"
+        className="bottom-28 left-28"
+        id="speech-bubble-bottom-left"
       />
     </div>
   );

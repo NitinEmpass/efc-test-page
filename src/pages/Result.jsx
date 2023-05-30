@@ -1,7 +1,7 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
 // import { Radar } from "react-chartjs-2";
 // import Chart from "chart.js/auto";
-import axios from "axios";
+// import axios from "axios";
 // import DOMPurify from "dompurify";
 import Modal from "../components/Modal";
 import { UserContext } from "../context/UserContext";
@@ -15,8 +15,8 @@ const Result = () => {
   const { player_id, name, email, age, gender, grade, res } =
     useContext(UserContext);
   const [result, setResult] = useState({});
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState("");
   const navigate = useNavigate();
   const [showConfetti, setShowConfetti] = useState(false);
   const [totalScore, setTotalScore] = useState(0);
@@ -124,15 +124,15 @@ const Result = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (loading || result === null)
-    return (
-      <div className="w-full h-full flex flex-col gap-2 justify-center items-center absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
-        <div className="loader"></div>
-        <span className="bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange inline-block text-transparent bg-clip-text text-xl text-center">
-          Getting your result...
-        </span>
-      </div>
-    );
+  // if (loading || result === null)
+  //   return (
+  //     <div className="w-full h-full flex flex-col gap-2 justify-center items-center absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+  //       <div className="loader"></div>
+  //       <span className="bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange inline-block text-transparent bg-clip-text text-xl text-center">
+  //         Getting your result...
+  //       </span>
+  //     </div>
+  //   );
 
   /* const { chart_data } = result;
   const labels = [];
@@ -282,14 +282,14 @@ const Result = () => {
           <div className="grid lg:grid-cols-2 gap-4 border-2 border-gsl-dark-orange p-4 w-full lg:w-[80%] shadow-xl rounded-lg justify-center items-center text-lg">
             <div className="row-span-6 flex gap-5 lg:gap-14 items-center">
               <div className="col-span-3 flex flex-col gap-4">
-                <span className="font-bold">Name</span>
-                <span className="font-bold">Age</span>
-                <span className="font-bold">Gender</span>
+                <span>Name</span>
+                <span>Age</span>
+                <span>Gender</span>
               </div>
               <div className="col-span-3 flex flex-col gap-4">
-                <span>{name}</span>
-                <span>{age}</span>
-                <span>{gender}</span>
+                <span className="font-bold">{name}</span>
+                <span className="font-bold">{age}</span>
+                <span className="font-bold">{gender}</span>
               </div>
             </div>
             <div className="row-span-6 flex gap-5 lg:gap-14 items-center">
@@ -318,11 +318,11 @@ const Result = () => {
               </p>
             ) : null}
           </div> */}
-          {error ? (
+          {/* error ? (
             <p className="bg-gsl-dark-orange p-3 my-2 rounded-md text-white">
               {error}
             </p>
-          ) : null}
+          ) : null */}
           <span className="lg:my-2 text-black text-lg lg:text-2xl mx-auto break-words text-left">
             Dear <span className="font-semibold">{name}</span>, Congratulations!
             You have successfully completed the assessment. <br />
@@ -465,14 +465,6 @@ const Result = () => {
             >
               Request Detailed Report
             </button>
-            <Modal
-              open={openModal}
-              onClose={() => setOpenModal(false)}
-              heading={
-                "Thank you for taking this assessment! We will send you the report soon."
-              }
-              firstText={"Ok"}
-            />
           </div>
           {/* <div className="my-2 flex flex-col w-full lg:w-[85%] gap-3">
             <h1 className="text-lg text-gray-700 font-medium ">
@@ -494,6 +486,14 @@ const Result = () => {
         </div> */}
       </div>
       <Footer />
+      <Modal
+        open={openModal}
+        onClose={() => setOpenModal(false)}
+        heading={
+          "Thank you for taking this assessment! We will send you the report soon."
+        }
+        firstText={"Ok"}
+      />
     </div>
   );
 };
