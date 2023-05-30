@@ -294,14 +294,14 @@ const Result = () => {
             </div>
             <div className="row-span-6 flex gap-5 lg:gap-14 items-center">
               <div className="col-span-3 flex flex-col gap-4">
-                <span className="font-bold">Email</span>
-                <span className="font-bold">Grade</span>
-                <span className="font-bold">Section</span>
+                <span>Email</span>
+                <span>Grade</span>
+                <span>Section</span>
               </div>
               <div className="col-span-3 flex flex-col gap-4">
-                <span>{email}</span>
-                <span>{grade}</span>
-                <span>NA</span>
+                <span className="font-bold">{email}</span>
+                <span className="font-bold">{grade}</span>
+                <span className="font-bold">NA</span>
               </div>
             </div>
           </div>
