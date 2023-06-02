@@ -253,18 +253,17 @@ const Result = () => {
             gravity={0.02} // Adjust the gravity value to control the speed
             className="animate-opacity"
           />
-          <div className="absolute top-0 left-0 w-full h-full bg-[#f9f9f9] z-[1]">
+          <div className="absolute top-0 left-0 w-full min-h-screen bg-[#f9f9f9] z-[1]">
             <img
               src={logo}
               alt="EFC"
               className="absolute left-[12%] lg:left-[40%] top-1 w-[80%] lg:w-[25%]"
             />
-            <span className="w-[90%] lg:w-[60%] mt-[10rem] flex flex-col justify-center items-center gap-5 lg:gap-10 text-2xl lg:text-5xl text-center z-10 bg-transparent text-black rounded-xl mx-auto py-5 my-5 animate-lazily ease-in-out duration-300">
+            <span className="w-[90%] lg:w-[60%] mt-[16rem] flex flex-col justify-center items-center gap-5 lg:gap-10 text-2xl lg:text-5xl text-center z-10 bg-transparent text-black rounded-xl mx-auto py-10 animate-lazily ease-in-out duration-300">
               {/* <h1 className="text-gsl-light-green text-center text-5xl lg:text-7xl p-5 text-stroke">
                 The 12 Ways of Processing
               </h1> */}
-              Congratulations! <br />
-              You have successfully completed the assessment.
+              Congratulations! You have successfully completed the assessment.
             </span>
             <div className="w-full flex justify-center items-center">
               <button
@@ -279,7 +278,7 @@ const Result = () => {
       )}
       <div className="h-full w-full overflow-auto flex flex-col justify-center items-center gap-4 lg:py-0 py-2 lg:p-5">
         <div className="w-[90%] lg:w-[80%] m-5 p-5 shadow-2xl border-t-4 border-t-gsl-dark-orange bg-white flex flex-col items-center justify-center rounded-md gap-5 mb-10 lg:mb-20">
-          <div className="grid lg:grid-cols-2 gap-4 border-2 border-gsl-dark-orange p-4 w-full lg:w-[80%] shadow-xl rounded-lg justify-center items-center text-lg">
+          <div className="grid lg:grid-cols-2 gap-4 border-2 border-gsl-dark-orange p-4 w-full lg:w-[80%] shadow-xl rounded-lg justify-center items-center text-lg lg:text-2xl">
             <div className="row-span-6 flex gap-5 lg:gap-14 items-center">
               <div className="col-span-3 flex flex-col gap-4">
                 <span>Name</span>
@@ -299,7 +298,17 @@ const Result = () => {
                 <span>Section</span>
               </div>
               <div className="col-span-3 flex flex-col gap-4">
-                <span className="font-bold">{email}</span>
+                <a
+                  href={`mailto:${email}`}
+                  target="_blank"
+                  className="font-bold"
+                  title={email}
+                  rel="noreferrer"
+                >
+                  {email.toString().length > 20
+                    ? email.toString().slice(0, 20) + "..."
+                    : email}
+                </a>
                 <span className="font-bold">{grade}</span>
                 <span className="font-bold">NA</span>
               </div>
@@ -324,10 +333,11 @@ const Result = () => {
             </p>
           ) : null */}
           <span className="lg:my-2 text-black text-lg lg:text-2xl mx-auto break-words text-left">
-            Dear <span className="font-semibold">{name}</span>, Congratulations!
-            You have successfully completed the assessment. <br />
-            Based on your test , your total score & detailed results are as
-            shown below.
+            Dear <span className="font-semibold">{name}</span>,<br />{" "}
+            Congratulations! You have successfully completed the assessment.{" "}
+            <br />
+            Based on your test, your total score & detailed results are as shown
+            below.
           </span>
           <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
             {/*  <div className="max-w-48 max-h-60 border-4 border-orange-400 rounded-md flex flex-col items-center justify-center">
@@ -340,7 +350,7 @@ const Result = () => {
             </div> */}
             <div className="max-w-xl max-h-60 border-4 border-orange-400 rounded-md flex flex-col items-center justify-center">
               <div className="w-full flex-1 bg-orange-400 text-center p-2 text-white text-xl lg:text-4xl flex items-center justify-center">
-                <span>Total Score(s)</span>
+                <span>Total Score</span>
               </div>
               <div className="flex items-center justify-center w-full flex-1 border-t-4 border-t-orange-400 text-xl lg:text-4xl text-center p-2 bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-transparent bg-clip-text break-all whitespace-break-spaces">
                 <span>{totalScore}</span>

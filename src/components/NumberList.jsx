@@ -67,7 +67,7 @@ export function NumberList({
       <div className="flex justify-center items-center gap-4">{numbers}</div>
       <div
         className={`flex justify-center items-center gap-4 ${
-          tour > 4 && tour < 8 ? "absolute" : "hidden"
+          tour > 3 && tour < 7 ? "absolute" : "hidden"
         }`}
       >
         <div className="question-number px-4 py-3 lg:px-3 lg:py-2 border rounded-full cursor-pointer hover:bg-gradient-to-r bg-[#9fe59f] text-white">
@@ -91,14 +91,14 @@ export function NumberList({
         /> */}
       <CustomTour
         content="Item attempted"
-        isTour={tour === 5 ? true : false}
+        isTour={tour === 4 ? true : false}
         setTour={setTour}
         className="bottom-28 left-10"
         id="speech-bubble-bottom-left"
       />
       <CustomTour
         content="Item unattempted"
-        isTour={tour === 6 ? true : false}
+        isTour={tour === 5 ? true : false}
         setTour={setTour}
         className="bottom-28 left-28"
         id="speech-bubble-bottom-left"

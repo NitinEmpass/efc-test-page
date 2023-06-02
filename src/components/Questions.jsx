@@ -219,7 +219,7 @@ const Questions = () => {
         <div className="flex flex-col justify-center items-center w-full">
           <CustomTour
             content="You're all set! Click 'Start Now' to take the assessment OR 'Tour again' to replay navigation."
-            isTour={tour === 7 ? true : false}
+            isTour={tour === 6 ? true : false}
             setTour={setTour}
             tour={7}
             text="Start now"
@@ -262,7 +262,7 @@ const Questions = () => {
                       id="speech-bubble-right-top"
                     />
                   </div>
-                  <div>
+                  {/* <div>
                     <Tooltip title="Click to understand the statement better">
                       <button
                         className="relative block lg:hidden border px-4 py-2 rounded-full font-serif font-bold bg-black/70 hover:bg-white text-white hover:text-black duration-300 ease-in-out"
@@ -280,7 +280,7 @@ const Questions = () => {
                       className="-right-9 top-16"
                       id="speech-bubble-top-right"
                     />
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="flex justify-between items-center w-full gap-2">
@@ -303,10 +303,10 @@ const Questions = () => {
                     content={"Click to listen to this text"}
                     isTour={tour === 1 ? true : false}
                     setTour={setTour}
-                    className="lg:-top-2 lg:right-28"
+                    className="lg:-top-2 lg:right-12"
                     id="speech-bubble-right-top"
                   />
-                  <Tooltip title="Click to understand the statement better">
+                  {/* <Tooltip title="Click to understand the statement better">
                     <button
                       className="hidden lg:block border px-4 py-2 rounded-full font-serif font-bold bg-black/70 hover:bg-white text-white hover:text-black duration-300 ease-in-out"
                       onClick={() => setOpenDesc(!openDesc)}
@@ -324,7 +324,7 @@ const Questions = () => {
                       className="lg:top-16 lg:-right-5"
                       id="speech-bubble-top-right"
                     />
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div
@@ -404,7 +404,7 @@ const Questions = () => {
             </Tooltip>
             <CustomTour
               content="To go back to the previous item"
-              isTour={tour === 3 ? true : false}
+              isTour={tour === 2 ? true : false}
               setTour={setTour}
               className="bottom-16"
               id="speech-bubble-bottom-left"
@@ -445,7 +445,7 @@ const Questions = () => {
               </Tooltip>
               <CustomTour
                 content="To move to the next item"
-                isTour={tour === 4 ? true : false}
+                isTour={tour === 3 ? true : false}
                 setTour={setTour}
                 className="right-0 bottom-16"
                 id="speech-bubble-bottom-right"

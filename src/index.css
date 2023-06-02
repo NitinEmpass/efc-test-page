@@ -124,7 +124,7 @@ ol {
 
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-left: 24px solid #ffff99;
+  border-left: 24px solid black;
 }
 #speech-bubble-right-bottom::after {
   content: "";
@@ -139,7 +139,7 @@ ol {
 
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-left: 24px solid #ffff99;
+  border-left: 24px solid black;
 }
 #speech-bubble-left-top::after {
   content: "";
@@ -154,7 +154,7 @@ ol {
 
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-right: 24px solid #ffff99;
+  border-right: 24px solid black;
 }
 #speech-bubble-left-bottom::after {
   content: "";
@@ -169,7 +169,7 @@ ol {
 
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-right: 24px solid #ffff99;
+  border-right: 24px solid black;
 }
 #speech-bubble-bottom-left::after {
   content: "";
@@ -184,7 +184,7 @@ ol {
 
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 24px solid #ffff99;
+  border-top: 24px solid black;
 }
 #speech-bubble-bottom-right::after {
   content: "";
@@ -199,7 +199,7 @@ ol {
 
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 24px solid #ffff99;
+  border-top: 24px solid black;
 }
 #speech-bubble-top-right::after {
   content: "";
@@ -214,7 +214,7 @@ ol {
 
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 24px solid #ffff99;
+  border-bottom: 24px solid black;
 }
 #speech-bubble-top-left::after {
   content: "";
@@ -229,5 +229,5 @@ ol {
 
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 24px solid #ffff99;
+  border-bottom: 24px solid black;
 }
