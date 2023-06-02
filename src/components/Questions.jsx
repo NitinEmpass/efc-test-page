@@ -258,7 +258,7 @@ const Questions = () => {
                       content={"Click to listen to this text"}
                       isTour={tour === 1 ? true : false}
                       setTour={setTour}
-                      className="-top-3 right-24"
+                      className="-top-3 right-12"
                       id="speech-bubble-right-top"
                     />
                   </div>
@@ -287,7 +287,7 @@ const Questions = () => {
                 <div className="flex items-center justify-center gap-6 h-20">
                   <h3
                     ref={textOverflow}
-                    className="text-lg lg:text-2xl"
+                    className="text-base lg:text-2xl"
                     onCopy={(e) => e.preventDefault()} // Prevent copy
                     onCut={(e) => e.preventDefault()} // Prevent cut
                     onContextMenu={(e) => e.preventDefault()} // Prevent right-click
