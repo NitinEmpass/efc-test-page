@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 
@@ -20,6 +20,21 @@ const CheckModal = ({
 
   setRes(res);
   // console.log(heading, firstText, secondText);
+  
+  useEffect(() => {
+    const body = document.querySelector("body");
+
+    if (open) {
+      body.style.overflow = "hidden"; // Disable scrolling
+    } else {
+      body.style.overflow = ""; // Enable scrolling
+    }
+
+    return () => {
+      body.style.overflow = ""; // Re-enable scrolling on component unmount
+    };
+  }, [open]);
+
   const handleSubmit = async (e) => {
     //handling the case when user does not select any answer
     const updatedRes = [...res];
@@ -78,12 +93,9 @@ const CheckModal = ({
   };
   if (!open) return null;
   return (
-    <div
-      onClick={onClose}
-      className="bg-white absolute top-0 left-0 min-h-full w-full flex justify-center"
-    >
+    <div className="bg-white absolute top-0 left-0 min-h-screen w-full flex justify-center">
       <div
-        className="bg-orange-50 lg:w-[40%] w-[90%] max-h-[500px] absolute p-5 my-5 top-[30%] shadow-2xl flex flex-col justify-center items-center gap-1"
+        className="bg-orange-50 lg:w-[40%] w-[90%] max-h-[500px] absolute p-5 my-5 top-[30%] shadow-2xl flex flex-col justify-center items-center gap-1 rounded-xl"
         onClick={(e) => {
           e.stopPropagation();
         }}
