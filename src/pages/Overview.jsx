@@ -41,7 +41,7 @@ const Overview = () => {
   return (
     <div className="min-h-screen w-full bg-[url(./assets/images/bg-logo_adobe_express.svg)] bg-cover bg-no-repeat">
       <Navbar />
-      <div className="flex flex-col items-center justify-center w-full mx-auto gap-4 p-5 lg:p-10 shadow-2xl rounded-md bg-orange-50">
+      <div className="flex flex-col items-center justify-center w-full mx-auto gap-4 p-5 lg:p-10 shadow-2xl rounded-md bg-blue-50">
         <h1 className="text-2xl lg:text-4xl font-semibold text-center">
           Quick Guide
         </h1>

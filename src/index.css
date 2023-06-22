@@ -52,7 +52,7 @@ ol {
 
 /* Customize the thumb of both horizontal and vertical scrollbars */
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(255 159 48);
+  background-color: rgb(1, 130, 205);
   border-radius: 9999px;
   border: 1px solid rgba(255, 255, 255, 0.5);
 }

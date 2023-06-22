@@ -344,15 +344,15 @@ const Result = () => {
               <div className="w-full flex-1 bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-center p-2 text-white text-4xl flex items-center justify-center">
                 <span>Test Score</span>
               </div>
-              <div className="flex items-center justify-center w-full flex-1 border-t-4 border-t-orange-400 text-4xl text-center p-2 bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-transparent bg-clip-text break-all whitespace-break-spaces">
+              <div className="flex items-center justify-center w-full flex-1 border-t-4 border-t-blue-400 text-4xl text-center p-2 bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-transparent bg-clip-text break-all whitespace-break-spaces">
                 <span>{result.total_score}</span>
               </div>
             </div> */}
-            <div className="max-w-xl max-h-60 border-4 border-orange-400 rounded-md flex flex-col items-center justify-center">
-              <div className="w-full flex-1 bg-orange-400 text-center p-2 text-white text-xl lg:text-4xl flex items-center justify-center">
+            <div className="max-w-xl max-h-60 border-4 border-blue-500 rounded-md flex flex-col items-center justify-center">
+              <div className="w-full flex-1 bg-gsl-dark-orange text-center p-2 text-white text-xl lg:text-4xl flex items-center justify-center">
                 <span>Total Score</span>
               </div>
-              <div className="flex items-center justify-center w-full flex-1 border-t-4 border-t-orange-400 text-xl lg:text-4xl text-center p-2 bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-transparent bg-clip-text break-all whitespace-break-spaces">
+              <div className="flex items-center justify-center w-full flex-1 border-t-4 border-t-blue-500 text-xl lg:text-4xl text-center p-2 bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-transparent bg-clip-text break-all whitespace-break-spaces">
                 <span>{totalScore}</span>
               </div>
             </div>

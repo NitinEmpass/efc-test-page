@@ -215,7 +215,7 @@ const Questions = () => {
   return (
     <div className="min-h-screen w-full relative overflow-auto bg-[url(./assets/images/bg-logo_adobe_express.svg)] bg-cover bg-no-repeat">
       <Navbar />
-      <div className="flex flex-col justify-center items-start p-5 mx-auto w-[95%] lg:w-[65%] my-8 lg:my-5 lg:mb-20 bg-orange-50 rounded-md shadow-lg gap-10 lg:gap-5 relative">
+      <div className="flex flex-col justify-center items-start p-5 mx-auto w-[95%] lg:w-[65%] my-8 lg:my-5 lg:mb-20 bg-blue-50 rounded-md shadow-lg gap-10 lg:gap-5 relative">
         <div className="flex flex-col justify-center items-center w-full">
           <CustomTour
             content="You're all set! Click 'Start Now' to take the assessment OR 'Tour again' to replay navigation."
@@ -414,7 +414,7 @@ const Questions = () => {
             <button
               type="submit"
               onClick={handleSubmit}
-              className="flex justify-center items-center p-2 px-4 border hover:ring-2 ring-orange-400 rounded-md text-xl bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-white"
+              className="flex justify-center items-center p-2 px-4 border hover:ring-2 ring-blue-400 rounded-md text-xl bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-white"
             >
               Submit
             </button>
@@ -425,7 +425,7 @@ const Questions = () => {
                   onClick={handleNext}
                   className={`${
                     animate && "animate-bounce"
-                  } flex justify-center items-center p-2 px-6 border hover:ring-2 ring-orange-400 rounded-md text-2xl bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-black hover:text-white bg-white`}
+                  } flex justify-center items-center p-2 px-6 border hover:ring-2 ring-blue-400 rounded-md text-2xl bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-black hover:text-white bg-white`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

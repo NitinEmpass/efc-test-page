@@ -111,7 +111,7 @@ const Rules = () => {
   return (
     <div className="h-screen w-full bg-[url(./assets/images/bg-logo_adobe_express.svg)] bg-cover bg-no-repeat">
       <Navbar />
-      <div className="flex flex-col items-center w-[95%] lg:w-[50%] mx-auto gap-4 p-5 lg:p-10 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] shadow-2xl rounded-md bg-orange-50">
+      <div className="flex flex-col items-center w-[95%] lg:w-[50%] mx-auto gap-4 p-5 lg:p-10 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] shadow-2xl rounded-md bg-blue-50">
         {error ? (
           <p className="bg-gsl-dark-orange p-3 my-2 rounded-md text-white">
             {error}

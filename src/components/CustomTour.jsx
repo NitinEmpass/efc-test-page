@@ -34,7 +34,7 @@ const CustomTour = ({
           />
         )}
         <div
-          className={`${classnames} w-[95%] lg:w-[500px] !bg-orange-50 !text-black py-5 shadow-lg`}
+          className={`${classnames} w-[95%] lg:w-[500px] !bg-blue-50 !text-black py-5 shadow-lg`}
         >
           <h1 className="text-2xl lg:text-4xl font-semibold text-center pb-2">
             Quick Tour

@@ -22,7 +22,7 @@ const Login = () => {
             alt="EFC"
           />
         </div>
-        <div className="border-orange-400 border-2 h-40 hidden lg:block"></div>
+        <div className="border-blue-400 border-2 h-40 hidden lg:block"></div>
         <LoginForm />
       </div>
       {/* <div>

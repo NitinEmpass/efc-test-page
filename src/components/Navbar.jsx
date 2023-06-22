@@ -1,18 +1,18 @@
 import React from "react";
-import logo from "../assets/images/GSL.avif";
+import logo from "../assets/images/efcs.jpg";
 import { Tooltip } from "react-tippy";
 import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
   const location = useLocation();
   // console.log(location.pathname);
   return (
-    <div className="w-full flex justify-between items-center border-b-2 border-b-orange-400 bg-gray-100 py-1">
+    <div className="w-full flex justify-between items-center border-b-2 border-b-blue-400 bg-gray-100 py-1">
       <Link to="/">
         <img
           src={logo}
           alt="SPI"
           height="auto"
-          className="lg:p-2 aspect-auto lg:w-36 w-28"
+          className="aspect-auto lg:w-24 w-16"
         />
       </Link>
       {location.pathname === "/" || location.pathname === "/result" ? (
