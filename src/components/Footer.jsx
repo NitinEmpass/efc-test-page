@@ -1,6 +1,7 @@
 import React from "react";
 import GSL from "../assets/images/GSL.avif";
 import Empass from "../assets/images/empass_logo.svg";
+import MMM from "../assets/images/mmm_icon.png";
 // import LSC from "../assets/images/lsc.png";
 
 const Footer = () => {
@@ -25,14 +26,14 @@ const Footer = () => {
               className="bg-black/80 px-2 py-2.5 rounded-md"
             />
           </a>
-          {/* <a href="#"> */}
-          {/* <img
-            src={LSC}
-            alt="LSC"
-            width={50}
-            className="rounded-md cursor-pointer"
-          /> */}
-          {/* </a> */}
+          <a href="https://mymemorymentor.com/">
+            <img
+              src={MMM}
+              alt="MMM"
+              width={35}
+              className="rounded-md cursor-pointer"
+            />
+          </a>
         </div>
       </div>
       <div className="flex justify-center items-center w-full text-gray-500">

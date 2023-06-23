@@ -128,21 +128,26 @@ const Rules = () => {
           <div dangerouslySetInnerHTML={{ __html: mySafeHTML }} />
         </div>
 
-        <button
-          type="button"
-          className="uppercase py-3 px-2 bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange w-32 text-white rounded-md mx-auto hover:scale-105 duration-300 ease-in-out font-semibold hover:shadow-xl"
-        >
-          {loading ? (
+        {loading ? (
+          <button
+            type="button"
+            className="uppercase py-3 px-2 bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange w-32 text-white rounded-md mx-auto hover:scale-105 duration-300 ease-in-out font-semibold hover:shadow-xl"
+          >
             <span className="loader"></span>
-          ) : (
-            <Link
-              to="/ques"
-              // state={{ player_id: player_id, questions: questions }}
+          </button>
+        ) : (
+          <Link
+            to="/ques"
+            // state={{ player_id: player_id, questions: questions }}
+          >
+            <button
+              type="button"
+              className="uppercase py-3 px-2 bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange w-32 text-white rounded-md mx-auto hover:scale-105 duration-300 ease-in-out font-semibold hover:shadow-xl"
             >
               Next
-            </Link>
-          )}
-        </button>
+            </button>
+          </Link>
+        )}
       </div>
       <Footer />
     </div>

@@ -9,12 +9,12 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Confetti from "react-confetti";
-import logo from "../assets/images/GSL.avif";
+import logo from "../assets/images/efcs-removebg.png";
 
 const Result = () => {
   const { player_id, name, email, age, gender, grade, res } =
     useContext(UserContext);
-  const [result, setResult] = useState({});
+  const [result, setResult] = useState(res);
   // const [loading, setLoading] = useState(false);
   // const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -102,7 +102,7 @@ const Result = () => {
         });
     } */
 
-    setResult(res);
+    // setResult(res);
     console.log("this is res array", res);
     function calculateScore() {
       var score = 0;
@@ -257,7 +257,7 @@ const Result = () => {
             <img
               src={logo}
               alt="EFC"
-              className="absolute left-[12%] lg:left-[40%] top-1 w-[80%] lg:w-[25%]"
+              className="absolute left-[12%] lg:left-[35%] top-1 w-[80%] lg:w-[25%]"
             />
             <span className="w-[90%] lg:w-[60%] mt-[16rem] flex flex-col justify-center items-center gap-5 lg:gap-10 text-2xl lg:text-5xl text-center z-10 bg-transparent text-black rounded-xl mx-auto py-10 animate-lazily ease-in-out duration-300">
               {/* <h1 className="text-gsl-light-green text-center text-5xl lg:text-7xl p-5 text-stroke">
@@ -336,8 +336,7 @@ const Result = () => {
             Dear <span className="font-semibold">{name}</span>,<br />{" "}
             Congratulations! You have successfully completed the assessment.{" "}
             <br />
-            Based on your test, your total score & detailed results are as shown
-            below.
+            Based on your test, your total score is shown below.
           </span>
           <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
             {/*  <div className="max-w-48 max-h-60 border-4 border-orange-400 rounded-md flex flex-col items-center justify-center">
@@ -349,10 +348,10 @@ const Result = () => {
               </div>
             </div> */}
             <div className="max-w-xl max-h-60 border-4 border-blue-500 rounded-md flex flex-col items-center justify-center">
-              <div className="w-full flex-1 bg-gsl-dark-orange text-center p-2 text-white text-xl lg:text-4xl flex items-center justify-center">
+              <div className="w-full flex-1 bg-gsl-dark-orange text-center p-2 text-white text-xl lg:text-3xl flex items-center justify-center">
                 <span>Total Score</span>
               </div>
-              <div className="flex items-center justify-center w-full flex-1 border-t-4 border-t-blue-500 text-xl lg:text-4xl text-center p-2 bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-transparent bg-clip-text break-all whitespace-break-spaces">
+              <div className="flex items-center justify-center w-full flex-1 border-t-4 border-t-blue-500 text-2xl lg:text-5xl text-center p-2 bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-transparent bg-clip-text break-all whitespace-break-spaces">
                 <span>{totalScore}</span>
               </div>
             </div>
@@ -465,7 +464,7 @@ const Result = () => {
               </tbody>
             </table>
           </div> */}
-          <div className="flex flex-col items-center gap-3 w-[90%]">
+          {/* <div className="flex flex-col items-center gap-3 w-[90%]">
             <button
               className="uppercase bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange py-3 px-4 text-white rounded-md hover:shadow-2xl hover:scale-105 duration-300 ease-in-out"
               onClick={() => {
@@ -475,7 +474,7 @@ const Result = () => {
             >
               Request Detailed Report
             </button>
-          </div>
+          </div> */}
           {/* <div className="my-2 flex flex-col w-full lg:w-[85%] gap-3">
             <h1 className="text-lg text-gray-700 font-medium ">
               <span>{result.label_info}</span>
