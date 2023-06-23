@@ -369,7 +369,7 @@ const Questions = () => {
                           item.answer ===
                             questions[current][`choice_${index + 1}`]
                       ) &&
-                      "ring-2 ring-[#9fe59f] bg-[#9fe59f] text-black border-transparent"
+                      "ring-2 ring-[#00fac5] bg-[#00fac5] text-black border-transparent"
                     }`}
                   >
                     {choice}
@@ -384,7 +384,7 @@ const Questions = () => {
             <Tooltip title="Previous">
               <button
                 onClick={handlePrev}
-                className="flex justify-center items-center p-2 px-6 border hover:ring-2 ring-orange-400 rounded-md text-2xl bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-black hover:text-white bg-white"
+                className="flex justify-center items-center p-2 px-6 border hover:ring-2 ring-blue-400 rounded-md text-2xl bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-black hover:text-white bg-white"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

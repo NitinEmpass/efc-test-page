@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "gsl-dark-orange": "#009ffa",
-        "gsl-light-green": "#009ffa",
+        "gsl-dark-orange": "#5271FF",
+        "gsl-light-green": "#5271FF",
       },
     },
   },

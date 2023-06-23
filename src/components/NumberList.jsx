@@ -33,7 +33,7 @@ export function NumberList({
       // const isCheckedBox = checkboxArray.includes(number);
       const className = `question-number px-4 py-3 lg:px-3 lg:py-2 border rounded-full cursor-pointer hover:bg-gradient-to-r ${
         isChecked
-          ? "bg-[#9fe59f] text-black"
+          ? "bg-[#00fac5] text-black"
           : // ? isCheckedBox
             //   ? "bg-[#737373] text-white"
             //   : "bg-[#9fe59f] text-black"

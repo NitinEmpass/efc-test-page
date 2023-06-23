@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/images/efcs.jpg";
+import logo from "../assets/images/efcs-removebg.png";
 import { Tooltip } from "react-tippy";
 import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
@@ -12,7 +12,7 @@ const Navbar = () => {
           src={logo}
           alt="SPI"
           height="auto"
-          className="aspect-auto lg:w-24 w-16"
+          className="aspect-auto lg:w-28 w-20"
         />
       </Link>
       {location.pathname === "/" || location.pathname === "/result" ? (
