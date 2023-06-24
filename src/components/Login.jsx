@@ -8,7 +8,7 @@ const Login = () => {
     <div className="flex flex-col justify-center items-center gap-6 mb-28">
       <div className="flex flex-col justify-center items-center">
         <h1 className="text-gsl-light-green text-center text-3xl lg:text-5xl p-5 text-stroke">
-          Executive Functioning Competency
+          Executive Functioning Competency Screener
         </h1>
         {/* <span className="font-semibold text-base lg:text-2xl text-center">
           Embrace and Accommodate Neurodiversity

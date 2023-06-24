@@ -20,7 +20,7 @@ const CheckModal = ({
 
   setRes(res);
   // console.log(heading, firstText, secondText);
-  
+
   useEffect(() => {
     const body = document.querySelector("body");
 
@@ -80,6 +80,9 @@ const CheckModal = ({
           }
         )
         .then((res) => {
+          // console.log(data);
+          // console.log(process.env.REACT_APP_WEBSITE_ADD_TEST);
+          // console.log(process.env.REACT_APP_WEBSITE_TOKEN);
           console.log(res.data);
           setLoading(false);
           navigate("/result");
