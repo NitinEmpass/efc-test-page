@@ -1,7 +1,7 @@
 import React from "react";
 // import techniques from "../assets/images/techniques.png";
 import LoginForm from "./LoginForm";
-import efc from "../assets/images/What-Is-Executive-Function.webp";
+import efc from "../assets/images/efcs_2.png";
 
 const Login = () => {
   return (
@@ -17,7 +17,7 @@ const Login = () => {
       <div className="flex flex-col lg:flex-row justify-center items-center mb-5 mx-auto gap-10 lg:gap-16">
         <div className="order-last lg:order-first">
           <img
-            className="w-full lg:w-[600px] h-full lg:h-80 rounded-lg aspect-video"
+            className="w-full lg:w-[350px] h-80 rounded-lg aspect-video"
             src={efc}
             alt="EFC"
           />
