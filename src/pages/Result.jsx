@@ -18,7 +18,7 @@ const Result = () => {
   // const [loading, setLoading] = useState(false);
   // const [error, setError] = useState("");
   const navigate = useNavigate();
-  const [showConfetti, setShowConfetti] = useState(false);
+  // const [showConfetti, setShowConfetti] = useState(false);
   const [totalScore, setTotalScore] = useState(0);
   useEffect(() => {
     if (!player_id) {
@@ -26,7 +26,7 @@ const Result = () => {
     }
   }, [navigate, player_id]);
 
-  useEffect(() => {
+  /* useEffect(() => {
     const body = document.querySelector("body");
 
     if (showConfetti) {
@@ -38,7 +38,7 @@ const Result = () => {
     return () => {
       body.style.overflow = ""; // Re-enable scrolling on component unmount
     };
-  }, [showConfetti]);
+  }, [showConfetti]); */
 
   const [openModal, setOpenModal] = useState(false);
 
@@ -116,7 +116,7 @@ const Result = () => {
     // fetchData();
     // console.log(result);
 
-    setShowConfetti(true);
+    // setShowConfetti(true);
     /* const timer = setTimeout(() => {
       setShowConfetti(false);
     }, 9000); // Set the duration (in milliseconds) for the confetti effect
@@ -243,7 +243,7 @@ const Result = () => {
   return (
     <div className="relative">
       <Navbar />
-      {showConfetti && (
+      {/* {showConfetti && (
         <div className="z-50">
           <Confetti
             width={window.innerWidth}
@@ -260,9 +260,6 @@ const Result = () => {
               className="absolute left-[12%] lg:left-[35%] top-1 w-[80%] lg:w-[25%]"
             />
             <span className="w-[90%] lg:w-[60%] mt-[16rem] flex flex-col justify-center items-center gap-5 lg:gap-10 text-2xl lg:text-5xl text-center z-10 bg-transparent text-black rounded-xl mx-auto py-10 animate-lazily ease-in-out duration-300">
-              {/* <h1 className="text-gsl-light-green text-center text-5xl lg:text-7xl p-5 text-stroke">
-                The 12 Ways of Processing
-              </h1> */}
               Congratulations! You have successfully completed the assessment.
             </span>
             <div className="w-full flex justify-center items-center">
@@ -275,7 +272,7 @@ const Result = () => {
             </div>
           </div>
         </div>
-      )}
+      )} */}
       <div className="h-full w-full overflow-auto flex flex-col justify-center items-center gap-4 lg:py-0 py-2 lg:p-5">
         <div className="w-[90%] lg:w-[80%] m-5 p-5 shadow-2xl border-t-4 border-t-gsl-dark-orange bg-white flex flex-col items-center justify-center rounded-md gap-5 mb-10 lg:mb-20">
           <div className="grid lg:grid-cols-2 gap-4 border-2 border-gsl-dark-orange p-4 w-full lg:w-[80%] shadow-xl rounded-lg justify-center items-center text-lg lg:text-2xl">
