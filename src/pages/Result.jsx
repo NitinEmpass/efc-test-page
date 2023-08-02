@@ -10,13 +10,14 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Confetti from "react-confetti";
 import logo from "../assets/images/efcs-removebg.png";
+import axios from "axios";
 
 const Result = () => {
-  const { player_id, name, email, age, gender, grade, res } =
+  const { player_id, name, email, age, gender, grade } =
     useContext(UserContext);
-  const [result, setResult] = useState(res);
-  // const [loading, setLoading] = useState(false);
-  // const [error, setError] = useState("");
+  const [result, setResult] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   // const [showConfetti, setShowConfetti] = useState(false);
   const [totalScore, setTotalScore] = useState(0);
@@ -78,7 +79,7 @@ const Result = () => {
   console.log(requestData);
   useEffect(() => {
     disableBackButton();
-    /* async function fetchData() {
+    async function fetchData() {
       setLoading(true);
       await axios
         .post(
@@ -100,11 +101,11 @@ const Result = () => {
           console.log(err);
           setError("Something went wrong. Please try again later.");
         });
-    } */
+    }
 
     // setResult(res);
-    console.log("this is res array", res);
-    function calculateScore() {
+    // console.log("this is res array", result);
+    /* function calculateScore() {
       var score = 0;
       for (let i = 0; i < res.length; i++) {
         score = score + parseInt(res[i].score);
@@ -112,16 +113,15 @@ const Result = () => {
       return score;
     }
     const total_score = calculateScore();
-    setTotalScore(total_score);
-    // fetchData();
-    // console.log(result);
+    setTotalScore(total_score); */
+    fetchData();
+    console.log("this is result: ", result);
 
     // setShowConfetti(true);
     /* const timer = setTimeout(() => {
       setShowConfetti(false);
     }, 9000); // Set the duration (in milliseconds) for the confetti effect
     return () => clearTimeout(timer); */
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // if (loading || result === null)
@@ -285,7 +285,7 @@ const Result = () => {
               <div className="col-span-3 flex flex-col gap-4">
                 <span className="font-bold">{name}</span>
                 <span className="font-bold">{age}</span>
-                <span className="font-bold">{gender}</span>
+                <span className="font-bold capitalize">{gender}</span>
               </div>
             </div>
             <div className="row-span-6 flex gap-5 lg:gap-14 items-center">
@@ -349,8 +349,42 @@ const Result = () => {
                 <span>Total Score</span>
               </div>
               <div className="flex items-center justify-center w-full flex-1 border-t-4 border-t-blue-500 text-2xl lg:text-5xl text-center p-2 bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-transparent bg-clip-text break-all whitespace-break-spaces">
-                <span>{totalScore}</span>
+                <span>{result.total_score}</span>
               </div>
+            </div>
+          </div>
+          <div className="flex flex-col items-center justify-center">
+            <span className="lg:my-2 text-black text-lg lg:text-2xl mx-auto break-words text-left">
+              Your score indicates{"  "}
+              <span
+                className="py-[2px] px-2"
+                style={{
+                  backgroundColor: result?.result_label_color
+                    ? result?.result_label_color
+                    : "green",
+                }}
+              >
+                {result.result_label ? result.result_label : "No"}
+              </span>
+              {"  "}
+              executive functioning issues.
+            </span>
+          </div>
+          <div className="text-black text-lg lg:text-2xl break-words text-left">
+            <span className="font-semibold underline">
+              Interpretation of Total EF Score
+            </span>
+            <div className="flex items-center lg:gap-10 gap-5">
+              <ul class="list-disc ml-10">
+                <li>&lt; 65</li>
+                <li>65 to 85</li>
+                <li>85+</li>
+              </ul>
+              <ul>
+                <li> - No EF issues</li>
+                <li> - Significant EF issues</li>
+                <li> - Severe EF issues</li>
+              </ul>
             </div>
           </div>
 
