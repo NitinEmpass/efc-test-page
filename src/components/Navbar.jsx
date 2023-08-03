@@ -15,7 +15,7 @@ const Navbar = () => {
           className="aspect-auto lg:w-28 w-20"
         />
       </Link>
-      {location.pathname === "/" || location.pathname === "/result" ? (
+      {location.pathname === "/" ? (
         <a
           href="mailto:support@mymemorymentor.com"
           className="p-1 lg:p-1 lg:px-3 text-base lg:text-xl border rounded-lg mr-4 bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-white"
