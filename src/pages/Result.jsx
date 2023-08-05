@@ -139,18 +139,29 @@ const Result = () => {
           <div className="bg-white flex flex-col lg:flex-row justify-center rounded-md gap-2 lg:gap-20 w-[95%] mx-auto">
             <div className="bg-white flex flex-col rounded-md w-full lg:w-[65%] gap-5 justify-start">
               <div className="grid lg:grid-cols-2 gap-2 p-2 w-full lg:justify-center items-center text-lg lg:text-2xl">
-                <div className="row-span-6 flex gap-5 items-center w-60">
+                <div className="row-span-6 flex gap-5 items-center">
                   <div className="col-span-3 flex flex-col gap-4">
-                    <span>Email</span>
-
+                    <span>Test Date</span>
                     <span>Age</span>
                     <span>Gender</span>
+                  </div>
+                  <div className="col-span-3 flex flex-col gap-4">
+                    <span className="font-bold">{formattedDate}</span>
+                    <span className="font-bold">{age}</span>
+                    <span className="font-bold capitalize">{gender}</span>
+                  </div>
+                </div>
+                <div className="row-span-6 flex gap-5 items-center">
+                  <div className="col-span-3 flex flex-col gap-4">
+                    <span>Email</span>
+                    <span>Grade</span>
+                    <span>Section</span>
                   </div>
                   <div className="col-span-3 flex flex-col gap-4">
                     <a
                       href={`mailto:${email}`}
                       target="_blank"
-                      className="font-bold break-words"
+                      className="font-bold break-words w-full"
                       title={email}
                       rel="noreferrer"
                     >
@@ -158,19 +169,6 @@ const Result = () => {
                         ? email.toString().slice(0, 25) + "..."
                         : email}
                     </a>
-
-                    <span className="font-bold">{age}</span>
-                    <span className="font-bold capitalize">{gender}</span>
-                  </div>
-                </div>
-                <div className="row-span-6 flex gap-5 items-center">
-                  <div className="col-span-3 flex flex-col gap-4">
-                    <span>Test Date</span>
-                    <span>Grade</span>
-                    <span>Section</span>
-                  </div>
-                  <div className="col-span-3 flex flex-col gap-4">
-                    <span className="font-bold">{formattedDate}</span>
                     <span className="font-bold">{grade}</span>
                     <span className="font-bold">NA</span>
                   </div>
@@ -190,8 +188,8 @@ const Result = () => {
           </div>
           <div className="bg-white flex flex-col lg:flex-row justify-left rounded-md gap-5 lg:gap-20 w-[95%] mx-auto">
             <span
-              className="lg:my-2 text-black text-lg lg:text-2xl mx-auto break-words text-left"
-              dangerouslySetInnerHTML={{__html: result.result_label_summary}}
+              className="lg:my-2 text-black text-lg lg:text-2xl mx-auto break-words text-left border-2 border-blue-400 p-2 rounded-md shadow-md"
+              dangerouslySetInnerHTML={{ __html: result.result_label_summary }}
             ></span>
             <div className="flex flex-col gap-2 w-[90%] lg:w-[30%]">
               <span className="font-semibold underline">

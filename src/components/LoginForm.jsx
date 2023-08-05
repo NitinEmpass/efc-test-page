@@ -152,7 +152,7 @@ const LoginForm = () => {
         <input
           type="text"
           placeholder="Enter Test Code"
-          className="outline-none border-2 border-gray-500 p-2 rounded-md"
+          className="outline-none border-2 border-gray-500 p-2 rounded-md focus:ring-2 focus:ring-gsl-dark-orange focus:border-none"
           required
           name="testCode"
           value={formData.testCode}
@@ -162,7 +162,7 @@ const LoginForm = () => {
           <input
             type="text"
             placeholder="Your First Name"
-            className="outline-none border-2 border-gray-500 p-2 rounded-md w-[50%]"
+            className="outline-none border-2 border-gray-500 p-2 rounded-md w-[50%] focus:ring-2 focus:ring-gsl-dark-orange focus:border-none"
             required
             name="firstName"
             autoComplete="first-name"
@@ -172,7 +172,7 @@ const LoginForm = () => {
           <input
             type="text"
             placeholder="Your Last Name"
-            className="outline-none border-2 border-gray-500 p-2 rounded-md w-[50%]"
+            className="outline-none border-2 border-gray-500 p-2 rounded-md w-[50%] focus:ring-2 focus:ring-gsl-dark-orange focus:border-none"
             required
             name="lastName"
             autoComplete="family-name"
@@ -184,7 +184,7 @@ const LoginForm = () => {
           <input
             type="email"
             placeholder="Your email"
-            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%]"
+            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%] focus:ring-2 focus:ring-gsl-dark-orange focus:border-none"
             required
             name="email"
             autoComplete="email"
@@ -192,7 +192,7 @@ const LoginForm = () => {
             onChange={handleChange}
           />
           <select
-            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%]"
+            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%] focus:ring-2 focus:ring-gsl-dark-orange focus:border-none"
             required
             name="gender"
             autoComplete="gender"
@@ -214,7 +214,7 @@ const LoginForm = () => {
             type="number"
             name="age"
             placeholder="Your age"
-            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%]"
+            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%] focus:ring-2 focus:ring-gsl-dark-orange focus:border-none"
             required
             min={5}
             autoComplete="age"
@@ -222,7 +222,7 @@ const LoginForm = () => {
             onChange={handleChange}
           />
           <select
-            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%]"
+            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%] focus:ring-2 focus:ring-gsl-dark-orange focus:border-none"
             required
             name="grade"
             autoComplete="grade"
@@ -242,7 +242,7 @@ const LoginForm = () => {
 
         <button
           type="submit"
-          className="uppercase py-3 px-2 bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange w-32 text-white rounded-md mx-auto hover:scale-105 duration-300 ease-in-out font-semibold"
+          className="uppercase py-3 px-2 bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange w-32 text-white rounded-md mx-auto hover:scale-105 duration-300 ease-in-out font-semibold focus:ring-2 focus:ring-gsl-dark-orange focus:border-none"
         >
           {loading ? <span className="loader"></span> : "start test"}
         </button>
