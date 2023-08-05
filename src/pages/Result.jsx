@@ -132,80 +132,82 @@ const Result = () => {
     <div className="relative">
       <ResultPageNavBar report_id={result.report_id} />
       <div className="h-full w-full overflow-auto flex flex-col justify-center items-center gap-4 lg:py-0 py-2 lg:p-5">
-        <div className="w-[90%] lg:m-5 lg:p-5 shadow-2xl border-t-4 border-t-gsl-dark-orange bg-white flex flex-col justify-center rounded-md gap-5 mb-10 lg:mb-20">
+        <div className="w-[90%] lg:m-5 lg:p-5 shadow-2xl border-t-4 border-t-gsl-dark-orange bg-white flex flex-col justify-center rounded-md gap-2 mb-10 lg:mb-20">
           <span className="text-xl lg:text-3xl font-bold mx-5 lg:mx-10">
             {name}
           </span>
-          <div className="bg-white flex flex-col lg:flex-row justify-center rounded-md gap-10 lg:gap-20 w-[95%] mx-auto">
-            <div className="bg-white flex flex-col rounded-md w-full lg:w-[60%] gap-5 justify-start">
-              <div className="grid lg:grid-cols-2 gap-4 p-2 w-full lg:justify-center items-center text-lg lg:text-2xl">
-                <div className="row-span-6 flex gap-5 lg:gap-14 items-center">
-                  <div className="col-span-3 flex flex-col gap-4">
-                    <span>Test Date</span>
-                    <span>Age</span>
-                    <span>Gender</span>
-                  </div>
-                  <div className="col-span-3 flex flex-col gap-4">
-                    <span className="font-bold">{formattedDate}</span>
-                    <span className="font-bold">{age}</span>
-                    <span className="font-bold capitalize">{gender}</span>
-                  </div>
-                </div>
-                <div className="row-span-6 flex gap-5 lg:gap-14 items-center">
+          <div className="bg-white flex flex-col lg:flex-row justify-center rounded-md gap-2 lg:gap-20 w-[95%] mx-auto">
+            <div className="bg-white flex flex-col rounded-md w-full lg:w-[65%] gap-5 justify-start">
+              <div className="grid lg:grid-cols-2 gap-2 p-2 w-full lg:justify-center items-center text-lg lg:text-2xl">
+                <div className="row-span-6 flex gap-5 items-center w-60">
                   <div className="col-span-3 flex flex-col gap-4">
                     <span>Email</span>
-                    <span>Grade</span>
-                    <span>Section</span>
+
+                    <span>Age</span>
+                    <span>Gender</span>
                   </div>
                   <div className="col-span-3 flex flex-col gap-4">
                     <a
                       href={`mailto:${email}`}
                       target="_blank"
-                      className="font-bold"
+                      className="font-bold break-words"
                       title={email}
                       rel="noreferrer"
                     >
-                      {email.toString().length > 20
-                        ? email.toString().slice(0, 20) + "..."
+                      {email.toString().length > 25
+                        ? email.toString().slice(0, 25) + "..."
                         : email}
                     </a>
+
+                    <span className="font-bold">{age}</span>
+                    <span className="font-bold capitalize">{gender}</span>
+                  </div>
+                </div>
+                <div className="row-span-6 flex gap-5 items-center">
+                  <div className="col-span-3 flex flex-col gap-4">
+                    <span>Test Date</span>
+                    <span>Grade</span>
+                    <span>Section</span>
+                  </div>
+                  <div className="col-span-3 flex flex-col gap-4">
+                    <span className="font-bold">{formattedDate}</span>
                     <span className="font-bold">{grade}</span>
                     <span className="font-bold">NA</span>
                   </div>
                 </div>
               </div>
-              <span className="lg:my-2 text-black text-lg lg:text-2xl mx-auto break-words text-left border-2 border-gsl-dark-orange p-2 rounded-md shadow-lg">
-                {name} indicates{"  "}
-                <span
-                  className="py-[2px] px-2"
-                  style={{ backgroundColor: result?.result_label_color }}
-                >
-                  {result.result_label}
-                </span>
-                {"  "}
-                executive functioning difficulties.
-              </span>
-              <div className="flex items-center gap-3">
-                <ul class="list-disc ml-10">
-                  <li>&lt; 65</li>
-                  <li>65 to 85</li>
-                  <li>85+</li>
-                </ul>
-                <ul>
-                  <li> - No EF issues</li>
-                  <li> - Significant EF issues</li>
-                  <li> - EF issues</li>
-                </ul>
-              </div>
             </div>
-            <div className="flex flex-col gap-5 items-center w-[95%] lg:w-[40%]">
-              <div className="flex flex-col justify-center items-center gap-4">
+            <div className="flex flex-col gap-5 items-center w-[95%] lg:w-[35%]">
+              <div className="flex flex-col justify-center items-center gap-1">
                 <span className="text-lg lg:text-2xl font-semibold">
                   Executive Functioning (EF) Score
                 </span>
-                <div className="w-[250px]">
+                <div className="w-[120px]">
                   <SolidGaugeChart total_score={result.total_score} />
                 </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white flex flex-col lg:flex-row justify-left rounded-md gap-5 lg:gap-20 w-[95%] mx-auto">
+            <div
+              className="lg:my-2 text-black text-lg lg:text-2xl break-words text-left border-2 border-gsl-dark-orange p-2 rounded-md shadow-lg w-[90%] lg:w-[65%]"
+              dangerouslySetInnerHTML={result.result_label}
+            ></div>
+            <div className="flex flex-col gap-2 w-[90%] lg:w-[30%]">
+              <span className="font-semibold underline">
+                Interpretation of Total EF Score
+              </span>
+              <div className="flex items-center gap-3">
+                <ul class="">
+                  <li>Less than 65</li>
+                  <li>Between 65 to 85</li>
+                  <li>86 and above</li>
+                </ul>
+                <ul>
+                  <li> : No EF issues</li>
+                  <li> : Significant EF issues</li>
+                  <li> : EF issues</li>
+                </ul>
               </div>
             </div>
           </div>

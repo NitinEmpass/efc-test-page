@@ -73,7 +73,7 @@ const SolidGaugeChart = ({ total_score = 67 }) => {
           format: "{y}",
           borderColor: "none",
           style: {
-            fontSize: "4.5rem",
+            fontSize: "2.5rem",
           },
         },
       },
