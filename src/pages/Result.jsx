@@ -189,10 +189,10 @@ const Result = () => {
             </div>
           </div>
           <div className="bg-white flex flex-col lg:flex-row justify-left rounded-md gap-5 lg:gap-20 w-[95%] mx-auto">
-            <div
-              className="lg:my-2 text-black text-lg lg:text-2xl break-words text-left border-2 border-gsl-dark-orange p-2 rounded-md shadow-lg w-[90%] lg:w-[65%]"
-              dangerouslySetInnerHTML={result.result_label}
-            ></div>
+            <span
+              className="lg:my-2 text-black text-lg lg:text-2xl mx-auto break-words text-left"
+              dangerouslySetInnerHTML={result.result_label_summary}
+            ></span>
             <div className="flex flex-col gap-2 w-[90%] lg:w-[30%]">
               <span className="font-semibold underline">
                 Interpretation of Total EF Score
