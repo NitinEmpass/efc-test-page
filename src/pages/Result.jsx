@@ -204,7 +204,7 @@ const Result = () => {
                 <ul>
                   <li> : No EF issues</li>
                   <li> : Significant EF issues</li>
-                  <li> : EF issues</li>
+                  <li> : Severe EF issues</li>
                 </ul>
               </div>
             </div>
