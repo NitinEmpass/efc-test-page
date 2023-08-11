@@ -50,9 +50,9 @@ const CheckModal = ({
         });
       }
     });
-    console.log("this is updated res", updatedRes);
-    // console.log("this is result", res);
-    console.log(callAPI);
+    // console.log("this is updated res", updatedRes);
+    console.log("this is result", res);
+    // console.log(callAPI);
     e.preventDefault();
     if (!callAPI) {
       onClose();
@@ -64,7 +64,7 @@ const CheckModal = ({
         res: updatedRes,
       };
 
-      console.log("this is data", data);
+      // console.log("this is data", data);
 
       setLoading(true);
 
@@ -83,7 +83,7 @@ const CheckModal = ({
           // console.log(data);
           // console.log(process.env.REACT_APP_WEBSITE_ADD_TEST);
           // console.log(process.env.REACT_APP_WEBSITE_TOKEN);
-          console.log(res.data);
+          // console.log(res.data);
           setLoading(false);
           navigate("/result");
         })

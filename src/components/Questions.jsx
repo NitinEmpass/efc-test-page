@@ -12,6 +12,7 @@ import { UserContext } from "../context/UserContext";
 // import soundfileTitle from "../assets/sounds/que_1146_title.mp3";
 // import soundfileDetail from "../assets/sounds/que_1146_detail.mp3";
 import { Tooltip } from "react-tippy";
+import "react-tippy/dist/tippy.css";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import SoundButton from "./SoundButton";
@@ -32,7 +33,7 @@ const Questions = () => {
   const [unattemptedFlag, setUnattemptedFlag] = useState(false);
   // console.log("this is checkbox array", checkboxArray);
   // console.log(questions, player_id);
-  console.log("this is questions array", questions);
+  // console.log("this is questions array", questions);
   // console.log("this is checked array", checked);
   const [openModal, setOpenModal] = useState(false);
   const [checkModal, setCheckModal] = useState(false);
@@ -87,27 +88,14 @@ const Questions = () => {
         );
       }
     };
-    const importSoundDetail = async () => {
-      try {
-        const soundModule = await import(
-          `../assets/sounds/que_${questions[current].id}_detail.mp3`
-        );
-        setSoundDetail(soundModule.default);
-      } catch (error) {
-        console.error(
-          `Error loading sound for question ${questions[current].id}:`,
-          error
-        );
-      }
-    };
     function overflowCheck() {
       // console.log("this is containing element div", overflowDiv);
-      console.log("this is text element tag", textOverflow);
+      // console.log("this is text element tag", textOverflow);
       if (
         textOverflow?.current?.parentElement?.clientHeight <
         textOverflow?.current?.clientHeight
       ) {
-        console.log("overflow");
+        // console.log("overflow");
         // textOverflow?.current?.classList.remove("lg:text-4xl");
         // textOverflow?.current?.classList.remove("text-2xl");
         // textOverflow?.current?.classList.add("!lg:text-2xl");
@@ -119,7 +107,6 @@ const Questions = () => {
     // overflowCheck();
     disableBackButton();
     importSoundTitle();
-    importSoundDetail();
   }, [current, questions]);
 
   function scrollToTop() {
@@ -129,7 +116,7 @@ const Questions = () => {
 
   const [res, setRes] = useState([]);
   function handleAnswerSelect(questionId, selectedAnswer, score) {
-    console.log(questionId, selectedAnswer, score);
+    // console.log(questionId, selectedAnswer, score);
     const ans = res;
     let existingAnswer = ans.find((answer) => answer.que_id === questionId);
     if (existingAnswer) {
@@ -143,7 +130,7 @@ const Questions = () => {
       });
       setChecked([...checked, current + 1]);
     }
-    console.log("this is ans", ans);
+    // console.log("this is ans", ans);
     setRes(ans);
     setAnimate(true);
     setOption(selectedAnswer);
@@ -153,7 +140,7 @@ const Questions = () => {
       }, 1000); // Delay the execution of handleSubmit() by 1 seconds
     }
   }
-  console.log("this is res", res);
+  // console.log("this is res", res);
 
   const handlePrev = () => {
     if (!unattemptedFlag) {
@@ -192,8 +179,8 @@ const Questions = () => {
           (question) => !res.some((response) => response.que_id === question.id)
         ) // Filter out the questions that don't have a corresponding response in the res array
         .map((question) => question.index); // Extract the indices of the unattempted questions
-      console.log(unattemptedQuestionIndices);
-      console.log("this is unattempeted array", unattemptedQuestionIndices);
+      // console.log(unattemptedQuestionIndices);
+      // console.log("this is unattempeted array", unattemptedQuestionIndices);
       setUnattempted(unattemptedQuestionIndices);
       setCurrent(unattemptedQuestionIndices[0]);
       setUnattemptedFlag(true);

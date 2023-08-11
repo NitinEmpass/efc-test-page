@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import axios from "axios";
 import { genderOptions, gradeOptions } from "../assets/data/selectOptions";
+import { Tooltip } from "react-tippy";
+import "react-tippy/dist/tippy.css";
+import "../tippycontent.css";
 
 const LoginForm = () => {
   const navigator = useNavigate();
@@ -67,10 +70,10 @@ const LoginForm = () => {
       code: formData.testCode,
       school_name: "NA",
     };
-    console.log(data);
+    // console.log(data);
 
-    if (formData.testCode === "GSL21") {
-      console.log("GSL21");
+    if (formData.testCode === "EFC08") {
+      // console.log("EFC08");
       await handleRegister(data, player_id);
     } else {
       await handleVerify(data, player_id);
@@ -86,7 +89,7 @@ const LoginForm = () => {
 
   const handleVerify = async (data, player_id) => {
     console.log("Verify Called");
-    console.log(data);
+    // console.log(data);
     // console.log(process.env.REACT_APP_WEBSITE_CHECK_USER);
     // console.log(process.env.REACT_APP_WEBSITE_TOKEN);
     await axios
@@ -101,7 +104,7 @@ const LoginForm = () => {
         }
       )
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         if (res.data.status === "201") {
           handleRegister(data, player_id);
         } else {
@@ -127,7 +130,7 @@ const LoginForm = () => {
         }
       )
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setPlayer_Id(player_id);
         navigator("/rules");
       })
@@ -152,27 +155,31 @@ const LoginForm = () => {
         <input
           type="text"
           placeholder="Enter Test Code"
-          className="outline-none border-2 border-gray-500 p-2 rounded-md focus:ring-2 focus:ring-gsl-dark-orange focus:border-none"
+          className="outline-none border-2 border-gray-500 p-2 rounded-md"
           required
           name="testCode"
           value={formData.testCode}
           onChange={handleChange}
         />
         <div className="w-full flex items-center gap-6">
-          <input
-            type="text"
-            placeholder="Your First Name"
-            className="outline-none border-2 border-gray-500 p-2 rounded-md w-[50%] focus:ring-2 focus:ring-gsl-dark-orange focus:border-none"
-            required
-            name="firstName"
-            autoComplete="first-name"
-            value={formData.firstName}
-            onChange={handleChange}
-          />
+          <div className="w-[50%] outline-none border-2 border-gray-500 p-2 rounded-md">
+            <Tooltip title="Please enter the details of the Learner as this will get printed on all reports">
+              <input
+                type="text"
+                placeholder="Your First Name"
+                className="w-full"
+                required
+                name="firstName"
+                autoComplete="first-name"
+                value={formData.firstName}
+                onChange={handleChange}
+              />
+            </Tooltip>
+          </div>
           <input
             type="text"
             placeholder="Your Last Name"
-            className="outline-none border-2 border-gray-500 p-2 rounded-md w-[50%] focus:ring-2 focus:ring-gsl-dark-orange focus:border-none"
+            className="outline-none border-2 border-gray-500 p-2 rounded-md w-[50%]"
             required
             name="lastName"
             autoComplete="family-name"
@@ -181,18 +188,22 @@ const LoginForm = () => {
           />
         </div>
         <div className="w-full flex flex-col lg:flex-row items-center gap-2 lg:gap-6">
-          <input
-            type="email"
-            placeholder="Your email"
-            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%] focus:ring-2 focus:ring-gsl-dark-orange focus:border-none"
-            required
-            name="email"
-            autoComplete="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
+          <div className="w-full lg:w-[50%] outline-none border-2 border-gray-500 p-2 rounded-md">
+            <Tooltip title="Enter Parent, Personal or Teacher's Email if learner is under 13 years of age">
+              <input
+                type="email"
+                placeholder="Your email"
+                className="w-full"
+                required
+                name="email"
+                autoComplete="email"
+                value={formData.email}
+                onChange={handleChange}
+              />
+            </Tooltip>
+          </div>
           <select
-            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%] focus:ring-2 focus:ring-gsl-dark-orange focus:border-none"
+            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%]"
             required
             name="gender"
             autoComplete="gender"
@@ -214,7 +225,7 @@ const LoginForm = () => {
             type="number"
             name="age"
             placeholder="Your age"
-            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%] focus:ring-2 focus:ring-gsl-dark-orange focus:border-none"
+            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%]"
             required
             min={5}
             autoComplete="age"
@@ -222,7 +233,7 @@ const LoginForm = () => {
             onChange={handleChange}
           />
           <select
-            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%] focus:ring-2 focus:ring-gsl-dark-orange focus:border-none"
+            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%]"
             required
             name="grade"
             autoComplete="grade"
@@ -242,7 +253,7 @@ const LoginForm = () => {
 
         <button
           type="submit"
-          className="uppercase py-3 px-2 bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange w-32 text-white rounded-md mx-auto hover:scale-105 duration-300 ease-in-out font-semibold focus:ring-2 focus:ring-gsl-dark-orange focus:border-none"
+          className="uppercase py-3 px-2 bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange w-32 text-white rounded-md mx-auto hover:scale-105 duration-300 ease-in-out font-semibold"
         >
           {loading ? <span className="loader"></span> : "start test"}
         </button>

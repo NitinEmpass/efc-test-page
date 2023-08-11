@@ -49,13 +49,13 @@ const Result = () => {
     window.history.replaceState(null, "/", window.location.href);
   }
 
-  console.log(player_id);
+  // console.log(player_id);
   const requestData = {
     crt_id: process.env.REACT_APP_CRT_ID,
     quiz_id: process.env.REACT_APP_QUIZ_ID,
     player_id: player_id,
   };
-  console.log(requestData);
+  // console.log(requestData);
   useEffect(() => {
     disableBackButton();
     async function fetchData() {
@@ -72,7 +72,7 @@ const Result = () => {
           }
         )
         .then((res) => {
-          console.log(res.data);
+          console.log("This is result response: ", res.data);
           setResult(res.data);
           setLoading(false);
         })
@@ -94,7 +94,7 @@ const Result = () => {
     const total_score = calculateScore();
     setTotalScore(total_score); */
     fetchData();
-    console.log("this is result: ", result);
+    // console.log("this is result: ", result);
 
     // setShowConfetti(true);
     /* const timer = setTimeout(() => {
@@ -111,7 +111,7 @@ const Result = () => {
       year: "numeric",
     })
     .replace(/ /g, "-");
-  console.log(formattedDate);
+  // console.log(formattedDate);
 
   if (loading || result === null)
     return (
