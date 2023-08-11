@@ -3,7 +3,7 @@
   color: black;
 }
 .tippy-tooltip-content {
-  background-color: #f4c23c;
+  background-color: transparent;
   color: black;
 }
 .tippy-tooltip [x-circle] {
