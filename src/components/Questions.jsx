@@ -77,10 +77,10 @@ const Questions = () => {
   useEffect(() => {
     const importSoundTitle = async () => {
       try {
-        const soundModule = await import(
-          `../assets/sounds/que_${questions[current].id}_title.mp3`
-        );
-        setSoundTitle(soundModule.default);
+        // const soundModule = await import(
+        //   `../assets/sounds/que_${questions[current].id}_title.mp3`
+        // );̥
+        setSoundTitle(questions[current].que_link);
       } catch (error) {
         console.error(
           `Error loading sound for question ${questions[current].id}:`,
@@ -314,7 +314,7 @@ const Questions = () => {
                   </div> */}
                 </div>
               </div>
-              <div
+              {/* <div
                 className={
                   openDesc === true
                     ? "absolute border p-2 lg:p-5 rounded-md -top-1 right-0 bg-slate-100 w-full lg:w-[90%] overflow-y-auto"
@@ -333,7 +333,7 @@ const Questions = () => {
                     <SoundButton src={soundDetail} />
                   </Tooltip>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="flex flex-col justify-center items-center gap-5 lg:gap-3 text-lg lg:text-2xl w-[90%] mx-auto">

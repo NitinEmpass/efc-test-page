@@ -155,14 +155,14 @@ const LoginForm = () => {
         <input
           type="text"
           placeholder="Enter Test Code"
-          className="outline-none border-2 border-gray-500 p-2 rounded-md"
+          className="outline-none border-2 border-gray-500 p-2 rounded-md focus:border-blue-400"
           required
           name="testCode"
           value={formData.testCode}
           onChange={handleChange}
         />
         <div className="w-full flex items-center gap-6">
-          <div className="w-[50%] outline-none border-2 border-gray-500 p-2 rounded-md">
+          <div className="w-[50%] outline-none border-2 border-gray-500 p-2 rounded-md focus:border-blue-400">
             <Tooltip title="Please enter the details of the Learner as this will get printed on all reports">
               <input
                 type="text"
@@ -179,7 +179,7 @@ const LoginForm = () => {
           <input
             type="text"
             placeholder="Your Last Name"
-            className="outline-none border-2 border-gray-500 p-2 rounded-md w-[50%]"
+            className="outline-none border-2 border-gray-500 p-2 rounded-md w-[50%] focus:border-blue-400"
             required
             name="lastName"
             autoComplete="family-name"
@@ -188,7 +188,7 @@ const LoginForm = () => {
           />
         </div>
         <div className="w-full flex flex-col lg:flex-row items-center gap-2 lg:gap-6">
-          <div className="w-full lg:w-[50%] outline-none border-2 border-gray-500 p-2 rounded-md">
+          <div className="w-full lg:w-[50%] outline-none border-2 border-gray-500 p-2 rounded-md focus:border-blue-400">
             <Tooltip title="Enter Parent, Professional or Teacher's Email if learner is under 13 years of age">
               <input
                 type="email"
@@ -203,7 +203,7 @@ const LoginForm = () => {
             </Tooltip>
           </div>
           <select
-            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%]"
+            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%] focus:border-blue-400"
             required
             name="gender"
             autoComplete="gender"
@@ -225,7 +225,7 @@ const LoginForm = () => {
             type="number"
             name="age"
             placeholder="Your age"
-            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%]"
+            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%] focus:border-blue-400"
             required
             min={5}
             autoComplete="age"
@@ -233,14 +233,14 @@ const LoginForm = () => {
             onChange={handleChange}
           />
           <select
-            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%]"
+            className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%] focus:border-blue-400"
             required
             name="grade"
             autoComplete="grade"
             onChange={handleChange}
             defaultValue={""}
           >
-            <option value="" disabled className="text-gray-500">
+            <option value="" disabled className="text-gray-500 focus:border-blue-400">
               Your Grade
             </option>
             {gradeOptions.map((option, idx) => (
