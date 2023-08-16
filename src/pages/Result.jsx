@@ -132,8 +132,8 @@ const Result = () => {
     <div className="relative">
       <ResultPageNavBar report_id={result.report_id} />
       <div className="h-full w-full overflow-auto flex flex-col justify-center items-center gap-4 lg:py-0 py-2 lg:p-5">
-        <div className="w-[90%] lg:m-5 lg:p-5 shadow-2xl border-t-4 border-t-gsl-dark-orange bg-white flex flex-col justify-center rounded-md gap-2 mb-10 lg:mb-20">
-          <span className="text-xl lg:text-3xl font-bold mx-5 lg:mx-10">
+        <div className="relative w-[90%] lg:m-5 lg:p-5 shadow-2xl border-t-4 border-t-gsl-dark-orange bg-white flex flex-col justify-center rounded-md gap-2 mb-10 lg:mb-20 lg:last:items-end">
+          <span className="text-xl lg:text-3xl font-bold mx-5 lg:mx-10 self-start">
             {name}
           </span>
           <div className="bg-white flex flex-col lg:flex-row justify-center rounded-md gap-2 lg:gap-20 w-[95%] mx-auto">
@@ -178,7 +178,7 @@ const Result = () => {
             <div className="flex flex-col gap-5 items-center w-[95%] lg:w-[35%]">
               <div className="flex flex-col justify-center items-center gap-1">
                 <span className="text-lg lg:text-2xl font-semibold">
-                  Executive Functioning (EF) Score
+                  Total Executive Functioning (EF) Score
                 </span>
                 <div className="w-[120px]">
                   <SolidGaugeChart total_score={result.total_score} />
@@ -186,7 +186,7 @@ const Result = () => {
               </div>
             </div>
           </div>
-          <div className="bg-white flex flex-col lg:flex-row justify-left rounded-md gap-5 lg:gap-20 w-[95%] mx-auto">
+          <div className="bg-white flex flex-col lg:flex-row justify-start rounded-md gap-5 lg:gap-20 w-[95%] mx-auto">
             <span
               className="lg:my-2 text-black text-lg lg:text-2xl mx-auto break-words text-left border-2 border-blue-400 p-2 rounded-md shadow-md"
               dangerouslySetInnerHTML={{ __html: result.result_label_summary }}
@@ -202,12 +202,17 @@ const Result = () => {
                   <li>86 and above</li>
                 </ul>
                 <ul>
-                  <li> : No EF issues</li>
+                  <li> : Insignificant EF issues *</li>
                   <li> : Significant EF issues</li>
                   <li> : Severe EF issues</li>
                 </ul>
               </div>
             </div>
+          </div>
+          <div className="mx-5 bg-white justify-self-end rounded-md w-[95%] lg:w-[29%] 2xl:w-[30%] 2xl:ml-0 2xl:mr-5 lg:mx-0">
+            * A score below 65 can reflect areas of difficulty in specific
+            competency areas. Please review the subtest scores for additional
+            details.
           </div>
         </div>
       </div>
