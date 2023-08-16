@@ -205,14 +205,14 @@ const Questions = () => {
       <div className="flex flex-col justify-center items-start p-5 mx-auto w-[95%] lg:w-[65%] my-8 lg:my-5 lg:mb-20 bg-blue-50 rounded-md shadow-lg gap-10 lg:gap-5 relative">
         <div className="flex flex-col justify-center items-center w-full">
           <CustomTour
-            content="You're all set! Click 'Start Now' to take the assessment OR 'Tour again' to replay navigation."
+            content="You're all set! Click 'Start Now' to take the screener OR 'Tour again' to replay navigation."
             isTour={tour === 6 ? true : false}
             setTour={setTour}
             tour={7}
             text="Start now"
           />
           <CustomTour
-            content="Please take a minute to get familiar with the assessment navigation and help options."
+            content="Please take a minute to get familiar with the screener navigation and help options."
             isTour={tour === 0 ? true : false}
             setTour={setTour}
             tour={0}
@@ -459,7 +459,7 @@ const Questions = () => {
         onClose={() => setOpenModal(false)}
         res={res}
         player_id={player_id}
-        heading="Great. You have attempted all items. Would you like to end the assessment?"
+        heading="Great. You have attempted all items. Would you like to end the screener?"
         firstText={"No"}
         secondText={"Yes"}
       />

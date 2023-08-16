@@ -118,11 +118,11 @@ const Rules = () => {
           </p>
         ) : null}
         <h1 className="text-2xl lg:text-4xl font-semibold text-center">
-          Introduction
+          Executive Functioning Competency Screener (EFCS)
         </h1>
         <div className="border-2 border-gsl-dark-orange w-full"></div>
         <span className="font-medium text-lg">
-          Read all Instructions below before you start the self assessment.
+          Read all Instructions below before you start the screener.
         </span>
         <div className="w-[85%]">
           <div dangerouslySetInnerHTML={{ __html: mySafeHTML }} />
