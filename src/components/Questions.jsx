@@ -22,7 +22,7 @@ import { NumberList } from "./NumberList";
 
 const Questions = () => {
   const navigate = useNavigate();
-  const { player_id, questions } = useContext(UserContext);
+  const { player_id, questions, age } = useContext(UserContext);
   // const player_id = "1";
   const [current, setCurrent] = useState(0);
   const [checkboxArray, setCheckboxArray] = useState([]);
@@ -88,6 +88,23 @@ const Questions = () => {
         );
       }
     };
+    const importSoundDetail = async () => {
+      try {
+        // const soundModule = await import(
+        //   `../assets/sounds/que_${questions[current].id}_title.mp3`
+        // );̥
+        if (age < 18) {
+          setSoundDetail(questions[current].que_detail_link);
+        } else {
+          setSoundDetail(questions[current].que_detail_link_2);
+        }
+      } catch (error) {
+        console.error(
+          `Error loading sound for question ${questions[current].id}:`,
+          error
+        );
+      }
+    };
     function overflowCheck() {
       // console.log("this is containing element div", overflowDiv);
       // console.log("this is text element tag", textOverflow);
@@ -107,6 +124,7 @@ const Questions = () => {
     // overflowCheck();
     disableBackButton();
     importSoundTitle();
+    importSoundDetail();
   }, [current, questions]);
 
   function scrollToTop() {
@@ -206,7 +224,7 @@ const Questions = () => {
         <div className="flex flex-col justify-center items-center w-full">
           <CustomTour
             content="You're all set! Click 'Start Now' to take the screener OR 'Tour again' to replay navigation."
-            isTour={tour === 6 ? true : false}
+            isTour={tour === 7 ? true : false}
             setTour={setTour}
             tour={7}
             text="Start now"
@@ -245,11 +263,11 @@ const Questions = () => {
                       content={"Click to listen to this text"}
                       isTour={tour === 1 ? true : false}
                       setTour={setTour}
-                      className="-top-3 right-12"
+                      className="-top-3 right-28"
                       id="speech-bubble-right-top"
                     />
                   </div>
-                  {/* <div>
+                  <div>
                     <Tooltip title="Click to understand the statement better">
                       <button
                         className="relative block lg:hidden border px-4 py-2 rounded-full font-serif font-bold bg-black/70 hover:bg-white text-white hover:text-black duration-300 ease-in-out"
@@ -267,7 +285,7 @@ const Questions = () => {
                       className="-right-9 top-16"
                       id="speech-bubble-top-right"
                     />
-                  </div> */}
+                  </div>
                 </div>
               </div>
               <div className="flex justify-between items-center w-full gap-2">
@@ -290,10 +308,11 @@ const Questions = () => {
                     content={"Click to listen to this text"}
                     isTour={tour === 1 ? true : false}
                     setTour={setTour}
-                    className="lg:-top-2 lg:right-12"
+                    className="lg:-top-2 lg:right-28"
                     id="speech-bubble-right-top"
                   />
-                  {/* <Tooltip title="Click to understand the statement better">
+
+                  <Tooltip title="Click to understand the statement better">
                     <button
                       className="hidden lg:block border px-4 py-2 rounded-full font-serif font-bold bg-black/70 hover:bg-white text-white hover:text-black duration-300 ease-in-out"
                       onClick={() => setOpenDesc(!openDesc)}
@@ -311,10 +330,10 @@ const Questions = () => {
                       className="lg:top-16 lg:-right-5"
                       id="speech-bubble-top-right"
                     />
-                  </div> */}
+                  </div>
                 </div>
               </div>
-              {/* <div
+              <div
                 className={
                   openDesc === true
                     ? "absolute border p-2 lg:p-5 rounded-md -top-1 right-0 bg-slate-100 w-full lg:w-[90%] overflow-y-auto"
@@ -328,12 +347,24 @@ const Questions = () => {
                   x
                 </button>
                 <div className="mr-10 flex items-center justify-center gap-4">
-                  <span>{questions[current].que_detail}</span>
-                  <Tooltip title="Listen to audio">
-                    <SoundButton src={soundDetail} />
-                  </Tooltip>
+                  <span>
+                    {questions[current].que_detail_link ? (
+                      <>
+                        {age < 18
+                          ? questions[current].que_detail
+                          : questions[current].que_detail_2}
+                      </>
+                    ) : (
+                      "No elaboration available"
+                    )}
+                  </span>
+                  {questions[current].que_detail_link ? (
+                    <Tooltip title="Listen to audio">
+                      <SoundButton src={soundDetail} />
+                    </Tooltip>
+                  ) : null}
                 </div>
-              </div> */}
+              </div>
             </div>
 
             <div className="flex flex-col justify-center items-center gap-5 lg:gap-3 text-lg lg:text-2xl w-[90%] mx-auto">
@@ -391,7 +422,7 @@ const Questions = () => {
             </Tooltip>
             <CustomTour
               content="To go back to the previous item"
-              isTour={tour === 2 ? true : false}
+              isTour={tour === 3 ? true : false}
               setTour={setTour}
               className="bottom-16"
               id="speech-bubble-bottom-left"
@@ -432,7 +463,7 @@ const Questions = () => {
               </Tooltip>
               <CustomTour
                 content="To move to the next item"
-                isTour={tour === 3 ? true : false}
+                isTour={tour === 4 ? true : false}
                 setTour={setTour}
                 className="right-0 bottom-16"
                 id="speech-bubble-bottom-right"

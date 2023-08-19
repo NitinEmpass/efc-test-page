@@ -166,8 +166,8 @@ const LoginForm = () => {
             <Tooltip title="Please enter the details of the Learner as this will get printed on all reports">
               <input
                 type="text"
-                placeholder="Your First Name"
-                className="w-full"
+                placeholder="Test taker's 1st name"
+                className="w-full outline-none"
                 required
                 name="firstName"
                 autoComplete="first-name"
@@ -178,7 +178,7 @@ const LoginForm = () => {
           </div>
           <input
             type="text"
-            placeholder="Your Last Name"
+            placeholder="Test taker's 2nd name"
             className="outline-none border-2 border-gray-500 p-2 rounded-md w-[50%] focus:border-blue-400"
             required
             name="lastName"
@@ -193,7 +193,7 @@ const LoginForm = () => {
               <input
                 type="email"
                 placeholder="Your email"
-                className="w-full"
+                className="w-full outline-none"
                 required
                 name="email"
                 autoComplete="email"
