@@ -4,10 +4,8 @@ import HighchartsReact from "highcharts-react-official";
 import HighchartsMore from "highcharts/highcharts-more";
 import SolidGauge from "highcharts/modules/solid-gauge";
 import HighchartsExporting from "highcharts/modules/exporting";
-import HighchartsExportData from "highcharts/modules/export-data";
 
 HighchartsExporting(Highcharts);
-HighchartsExportData(Highcharts);
 HighchartsMore(Highcharts);
 SolidGauge(Highcharts);
 

@@ -20,12 +20,12 @@ const Result = () => {
     }
   }, [navigate, player_id]);
 
-  const [openModal, setOpenModal] = useState(false);
+  // const [openModal, setOpenModal] = useState(false);
 
-  function scrollToTop() {
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-  }
+  // function scrollToTop() {
+  //   document.documentElement.scrollTop = 0;
+  //   document.body.scrollTop = 0;
+  // }
 
   const confirmLeavePage = useCallback((e) => {
     e.preventDefault();
@@ -196,7 +196,7 @@ const Result = () => {
                 Interpretation of Total EF Score
               </span>
               <div className="flex items-center gap-3">
-                <ul class="">
+                <ul className="">
                   <li>Less than 65</li>
                   <li>Between 65 to 85</li>
                   <li>86 and above</li>

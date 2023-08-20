@@ -93,39 +93,44 @@ const Questions = () => {
         // const soundModule = await import(
         //   `../assets/sounds/que_${questions[current].id}_title.mp3`
         // );̥
-        if (age < 18) {
-          setSoundDetail(questions[current].que_detail_link);
-        } else {
-          setSoundDetail(questions[current].que_detail_link_2);
+        if (
+          questions[current].que_detail_link ||
+          questions[current].que_detail_link_2
+        ) {
+          if (age < 18) {
+            setSoundDetail(questions[current].que_detail_link);
+          } else {
+            setSoundDetail(questions[current].que_detail_link_2);
+          }
         }
       } catch (error) {
         console.error(
-          `Error loading sound for question ${questions[current].id}:`,
+          `Error loading sound detail for question ${questions[current].id}:`,
           error
         );
       }
     };
-    function overflowCheck() {
-      // console.log("this is containing element div", overflowDiv);
-      // console.log("this is text element tag", textOverflow);
-      if (
-        textOverflow?.current?.parentElement?.clientHeight <
-        textOverflow?.current?.clientHeight
-      ) {
-        // console.log("overflow");
-        // textOverflow?.current?.classList.remove("lg:text-4xl");
-        // textOverflow?.current?.classList.remove("text-2xl");
-        // textOverflow?.current?.classList.add("!lg:text-2xl");
-        // textOverflow?.current?.classList.add("!text-base");
-        textOverflow.current.style.fontSize = "1.5rem";
-        textOverflow.current.style.lineHeight = "1.5rem";
-      }
-    }
+    // function overflowCheck() {
+    //   // console.log("this is containing element div", overflowDiv);
+    //   // console.log("this is text element tag", textOverflow);
+    //   if (
+    //     textOverflow?.current?.parentElement?.clientHeight <
+    //     textOverflow?.current?.clientHeight
+    //   ) {
+    //     // console.log("overflow");
+    //     // textOverflow?.current?.classList.remove("lg:text-4xl");
+    //     // textOverflow?.current?.classList.remove("text-2xl");
+    //     // textOverflow?.current?.classList.add("!lg:text-2xl");
+    //     // textOverflow?.current?.classList.add("!text-base");
+    //     textOverflow.current.style.fontSize = "1.5rem";
+    //     textOverflow.current.style.lineHeight = "1.5rem";
+    //   }
+    // }
     // overflowCheck();
     disableBackButton();
     importSoundTitle();
     importSoundDetail();
-  }, [current, questions]);
+  }, [age, current, questions]);
 
   function scrollToTop() {
     document.documentElement.scrollTop = 0;
@@ -267,25 +272,29 @@ const Questions = () => {
                       id="speech-bubble-right-top"
                     />
                   </div>
-                  <div>
-                    <Tooltip title="Click to understand the statement better">
-                      <button
-                        className="relative block lg:hidden border px-4 py-2 rounded-full font-serif font-bold bg-black/70 hover:bg-white text-white hover:text-black duration-300 ease-in-out"
-                        onClick={() => setOpenDesc(!openDesc)}
-                      >
-                        i
-                      </button>
-                    </Tooltip>
-                    <CustomTour
-                      content={
-                        "Click to listen to a detailed explanation of the item"
-                      }
-                      isTour={tour === 2 ? true : false}
-                      setTour={setTour}
-                      className="-right-9 top-16"
-                      id="speech-bubble-top-right"
-                    />
-                  </div>
+                  {questions[current].que_detail ||
+                  questions[current].que_detail_2 ||
+                  tour < 8 ? (
+                    <div>
+                      <Tooltip title="Click to understand the statement better">
+                        <button
+                          className="relative block lg:hidden border px-4 py-2 rounded-full font-serif font-bold bg-black/70 hover:bg-white text-white hover:text-black duration-300 ease-in-out"
+                          onClick={() => setOpenDesc(!openDesc)}
+                        >
+                          i
+                        </button>
+                      </Tooltip>
+                      <CustomTour
+                        content={
+                          "Click to listen to a detailed explanation of the item"
+                        }
+                        isTour={tour === 2 ? true : false}
+                        setTour={setTour}
+                        className="-right-9 top-16"
+                        id="speech-bubble-top-right"
+                      />
+                    </div>
+                  ) : null}
                 </div>
               </div>
               <div className="flex justify-between items-center w-full gap-2">
@@ -311,26 +320,32 @@ const Questions = () => {
                     className="lg:-top-2 lg:right-28"
                     id="speech-bubble-right-top"
                   />
+                  {questions[current].que_detail ||
+                  questions[current].que_detail_2 ||
+                  tour < 8 ? (
+                    <>
+                      <Tooltip title="Click to understand the statement better">
+                        <button
+                          className="hidden lg:block border px-4 py-2 rounded-full font-serif font-bold bg-black/70 hover:bg-white text-white hover:text-black duration-300 ease-in-out"
+                          onClick={() => setOpenDesc(!openDesc)}
+                        >
+                          i
+                        </button>
+                      </Tooltip>
 
-                  <Tooltip title="Click to understand the statement better">
-                    <button
-                      className="hidden lg:block border px-4 py-2 rounded-full font-serif font-bold bg-black/70 hover:bg-white text-white hover:text-black duration-300 ease-in-out"
-                      onClick={() => setOpenDesc(!openDesc)}
-                    >
-                      i
-                    </button>
-                  </Tooltip>
-                  <div className="hidden lg:inline-block relative">
-                    <CustomTour
-                      content={
-                        "Click to listen to a detailed explanation of the item"
-                      }
-                      isTour={tour === 2 ? true : false}
-                      setTour={setTour}
-                      className="lg:top-16 lg:-right-5"
-                      id="speech-bubble-top-right"
-                    />
-                  </div>
+                      <div className="hidden lg:inline-block relative">
+                        <CustomTour
+                          content={
+                            "Click to listen to a detailed explanation of the item"
+                          }
+                          isTour={tour === 2 ? true : false}
+                          setTour={setTour}
+                          className="lg:top-16 lg:-right-5"
+                          id="speech-bubble-top-right"
+                        />
+                      </div>
+                    </>
+                  ) : null}
                 </div>
               </div>
               <div
@@ -348,7 +363,8 @@ const Questions = () => {
                 </button>
                 <div className="mr-10 flex items-center justify-center gap-4">
                   <span>
-                    {questions[current].que_detail_link ? (
+                    {questions[current].que_detail ||
+                    questions[current].que_detail_2 ? (
                       <>
                         {age < 18
                           ? questions[current].que_detail
@@ -358,7 +374,8 @@ const Questions = () => {
                       "No elaboration available"
                     )}
                   </span>
-                  {questions[current].que_detail_link ? (
+                  {questions[current].que_detail_link ||
+                  questions[current].que_detail_link_2 ? (
                     <Tooltip title="Listen to audio">
                       <SoundButton src={soundDetail} />
                     </Tooltip>

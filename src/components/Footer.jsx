@@ -2,6 +2,7 @@ import React from "react";
 import GSL from "../assets/images/GSL.avif";
 import Empass from "../assets/images/empass_logo.svg";
 import MMM from "../assets/images/mmm_icon.png";
+import LSC from "../assets/images/lsc.png";
 import { Tooltip } from "react-tippy";
 import { useLocation } from "react-router-dom";
 // import LSC from "../assets/images/lsc.png";
@@ -13,7 +14,11 @@ const Footer = () => {
     <div className="flex flex-col lg:flex-row w-full justify-between items-center lg:gap-10 border border-t-2 border-t-blue-400 lg:px-5 py-1 fixed bottom-0 bg-gray-100">
       <div className="hidden lg:flex flex-col lg:flex-row justify-evenly items-center w-[80%] lg:w-[60%] mx-auto p-2 lg:p-0 gap-5">
         <div className="lg:flex justify-center items-center gap-6 lg:gap-26">
-          <a href="https://goodsensorylearning.com/">
+          <a
+            href="https://goodsensorylearning.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img
               src={GSL}
               alt="Good Sensory Learning"
@@ -21,7 +26,11 @@ const Footer = () => {
               className="aspect-auto mix-blend-darken"
             />
           </a>
-          <a href="https://www.empasslearning.com/">
+          <a
+            href="https://www.empasslearning.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img
               src={Empass}
               alt="Empass Learning"
@@ -29,13 +38,24 @@ const Footer = () => {
               className="bg-black/80 px-2 py-2.5 rounded-md"
             />
           </a>
-          <a href="https://mymemorymentor.com/">
+          <a
+            href="https://mymemorymentor.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img
               src={MMM}
               alt="MMM"
               width={35}
               className="rounded-md cursor-pointer"
             />
+          </a>
+          <a
+            href="https://www.learningspecialistcourses.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={LSC} alt="LSC" width={35} className="cursor-pointer" />
           </a>
         </div>
       </div>

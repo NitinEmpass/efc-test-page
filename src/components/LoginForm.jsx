@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import axios from "axios";
 import { genderOptions, gradeOptions } from "../assets/data/selectOptions";
-import { Tooltip } from "react-tippy";
 import "react-tippy/dist/tippy.css";
 import "../tippycontent.css";
+import TooltipInput from "./TooltipInput";
 
 const LoginForm = () => {
   const navigator = useNavigate();
@@ -145,7 +145,7 @@ const LoginForm = () => {
     // console.log(formData);
   };
   return (
-    <div className="flex flex-col justify-center items-center w-[90%] lg:w-[40%] gap-6 shadow-2xl px-10 py-5 rounded-lg bg-white">
+    <div className="flex flex-col justify-center items-center w-[90%] lg:w-[50%] gap-6 shadow-2xl px-5 lg:px-10 py-5 rounded-lg bg-white">
       {error && (
         <p className="bg-gsl-dark-orange p-3 my-2 rounded-md text-white">
           {error}
@@ -162,46 +162,38 @@ const LoginForm = () => {
           onChange={handleChange}
         />
         <div className="w-full flex items-center gap-6">
-          <div className="w-[50%] outline-none border-2 border-gray-500 p-2 rounded-md focus:border-blue-400">
-            <Tooltip title="Please enter the details of the Learner as this will get printed on all reports">
-              <input
-                type="text"
-                placeholder="Test taker's 1st name"
-                className="w-full outline-none"
-                required
-                name="firstName"
-                autoComplete="first-name"
-                value={formData.firstName}
-                onChange={handleChange}
-              />
-            </Tooltip>
-          </div>
-          <input
+          <TooltipInput
+            tooltipText="Please enter the details of the Learner as this will get printed on all reports"
+            type="text"
+            placeholder="Test taker's 1st name"
+            name="firstName"
+            autoComplete="first-name"
+            value={formData.firstName}
+            onChange={handleChange}
+            className="w-full lg:w-[50%]"
+          />
+          <TooltipInput
+            tooltipText="Please enter the details of the Learner as this will get printed on all reports"
             type="text"
             placeholder="Test taker's 2nd name"
-            className="outline-none border-2 border-gray-500 p-2 rounded-md w-[50%] focus:border-blue-400"
-            required
             name="lastName"
             autoComplete="family-name"
             value={formData.lastName}
             onChange={handleChange}
+            className="w-full lg:w-[50%]"
           />
         </div>
         <div className="w-full flex flex-col lg:flex-row items-center gap-2 lg:gap-6">
-          <div className="w-full lg:w-[50%] outline-none border-2 border-gray-500 p-2 rounded-md focus:border-blue-400">
-            <Tooltip title="Enter Parent, Professional or Teacher's Email if learner is under 13 years of age">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="w-full outline-none"
-                required
-                name="email"
-                autoComplete="email"
-                value={formData.email}
-                onChange={handleChange}
-              />
-            </Tooltip>
-          </div>
+          <TooltipInput
+            tooltipText="Enter Parent, Professional or Teacher's Email if learner is under 13 years of age"
+            type="email"
+            placeholder="Your email"
+            name="email"
+            autoComplete="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full lg:w-[50%]"
+          />
           <select
             className="outline-none border-2 border-gray-500 p-2 rounded-md w-full lg:w-[50%] focus:border-blue-400"
             required
