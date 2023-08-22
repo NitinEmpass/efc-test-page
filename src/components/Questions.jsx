@@ -228,7 +228,7 @@ const Questions = () => {
       <div className="flex flex-col justify-center items-start p-5 mx-auto w-[95%] lg:w-[65%] my-8 lg:my-5 lg:mb-20 bg-blue-50 rounded-md shadow-lg gap-10 lg:gap-5 relative">
         <div className="flex flex-col justify-center items-center w-full">
           <CustomTour
-            content="You're all set! Click 'Start Now' to take the screener OR 'Tour again' to replay navigation."
+            content="You're all set! Click 'Start Now' to take the screener or 'Tour Again' to replay navigation."
             isTour={tour === 7 ? true : false}
             setTour={setTour}
             tour={7}
