@@ -24,7 +24,7 @@ function TooltipInput({
 
   return (
     <div
-      className={`w-[50%] outline-none border-2 border-gray-500 p-2 rounded-md focus:border-blue-400 ${className}`}
+      className={`w-[50%] outline-none border-2 border-gray-500 p-2 rounded-md focus:border-blue-400 ${className} group focus-within:border-blue-400`}
     >
       <Tooltip
         title={tooltipText}
