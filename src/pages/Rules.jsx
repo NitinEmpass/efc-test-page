@@ -122,7 +122,7 @@ const Rules = () => {
         </h1>
         <div className="border-2 border-gsl-dark-orange w-full"></div>
         <span className="font-medium text-lg">
-          Read all Instructions below before you start the screener.
+          Read all Instructions before you start the screener.
         </span>
         <div className="w-[85%]">
           <div dangerouslySetInnerHTML={{ __html: mySafeHTML }} />
