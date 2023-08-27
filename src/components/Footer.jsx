@@ -3,6 +3,11 @@ import GSL from "../assets/images/GSL.avif";
 import Empass from "../assets/images/empass_logo.svg";
 import MMM from "../assets/images/mmm_icon.png";
 import LSC from "../assets/images/lsc.png";
+import APIC from "../assets/images/apic_icon.png";
+import MAPPR from "../assets/images/mappr_icon.png";
+import SPI from "../assets/images/spi_logo.jpg";
+import CDS from "../assets/images/cds_logo.png";
+import EFCS from "../assets/images/efcs-removebg.png";
 import { Tooltip } from "react-tippy";
 import { useLocation } from "react-router-dom";
 // import LSC from "../assets/images/lsc.png";
@@ -12,7 +17,7 @@ const Footer = () => {
   const date = new Date();
   return (
     <div className="flex flex-col lg:flex-row w-full justify-between items-center lg:gap-10 border border-t-2 border-t-blue-400 lg:px-5 py-1 fixed bottom-0 bg-gray-100">
-      <div className="hidden lg:flex flex-col lg:flex-row justify-evenly items-center w-[80%] lg:w-[60%] mx-auto p-2 lg:p-0 gap-5">
+      <div className="hidden lg:flex flex-col lg:flex-row justify-evenly items-center w-[90%] mx-auto p-2 lg:p-0 gap-5">
         <div className="lg:flex justify-center items-center gap-6 lg:gap-26">
           <a
             href="https://goodsensorylearning.com/"
@@ -57,10 +62,50 @@ const Footer = () => {
           >
             <img src={LSC} alt="LSC" width={35} className="cursor-pointer" />
           </a>
+          <a
+            href="https://mymemorymentor.com/mappr/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src={MAPPR}
+              alt="MAPPR"
+              width={70}
+              className="cursor-pointer"
+            />
+          </a>
+          <a
+            href="https://mymemorymentor.com/spi/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={SPI} alt="SPI" width={45} className="cursor-pointer" />
+          </a>
+          <a
+            href="https://mymemorymentor.com/efcs/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={EFCS} alt="EFCS" width={45} className="cursor-pointer" />
+          </a>
+          <a
+            href="https://mymemorymentor.com/cds/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={CDS} alt="CDS" width={45} className="cursor-pointer" />
+          </a>
+          <a
+            href="https://mymemorymentor.com/apic/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={APIC} alt="APIC" width={45} className="cursor-pointer" />
+          </a>
         </div>
       </div>
       <div className="flex justify-center items-center w-full text-gray-500 gap-4">
-        <span>&#169; {date.getFullYear()} Erica Warren LLC.</span>
+        <span>&#169; {date.getFullYear()} MyMemoryMentor LLC.</span>
         {location.pathname === "/result" ? (
           <a
             href="mailto:support@mymemorymentor.com"

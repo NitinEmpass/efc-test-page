@@ -158,6 +158,9 @@ const LoginForm = () => {
           className="outline-none border-2 border-gray-500 p-2 rounded-md focus:border-blue-400"
           required
           name="testCode"
+          onInput={(e) => {
+            e.target.value = e.target.value.toUpperCase();
+          }}
           value={formData.testCode}
           onChange={handleChange}
         />

@@ -157,11 +157,11 @@ const Questions = () => {
     setRes(ans);
     setAnimate(true);
     setOption(selectedAnswer);
-    if (ans.length === questions.length) {
-      setTimeout(() => {
-        handleSubmit();
-      }, 1000); // Delay the execution of handleSubmit() by 1 seconds
-    }
+    // if (ans.length === questions.length) {
+    //   setTimeout(() => {
+    //     handleSubmit();
+    //   }, 1000); // Delay the execution of handleSubmit() by 1 seconds
+    // }
   }
   // console.log("this is res", res);
 
@@ -179,6 +179,7 @@ const Questions = () => {
   };
   const handleNext = () => {
     setAnimate(false);
+    setOpenDesc(false);
     if (!unattemptedFlag) {
       if (current === questions.length - 1) setCurrent(0);
       else setCurrent(current + 1);
@@ -419,7 +420,12 @@ const Questions = () => {
             <Tooltip title="Previous">
               <button
                 onClick={handlePrev}
-                className="flex justify-center items-center p-2 px-6 border hover:ring-2 ring-blue-400 rounded-md text-2xl bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-black hover:text-white bg-white"
+                disabled={current === 0}
+                className={`flex justify-center items-center p-2 px-6 border hover:ring-2 ring-blue-400 rounded-md text-2xl ${
+                  tour > 7 && current === 0
+                    ? "bg-gray-400 cursor-not-allowed" // Change background color for disabled state
+                    : "bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-black hover:text-white"
+                }`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
