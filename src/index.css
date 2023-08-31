@@ -17,12 +17,12 @@
   padding-right: 0.5rem;
 }
 .significant-ef {
-  background-color: orange;
+  background-color: #ffa78a;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 .severe-ef {
-  background-color: red;
+  background-color: #ff8f8f;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
@@ -253,4 +253,8 @@ ol {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-bottom: 24px solid black;
+}
+.result-label-summary > ul{
+  list-style-type: disc;
+  margin: 0px 20px;
 }

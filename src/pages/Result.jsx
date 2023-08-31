@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import ResultPageNavBar from "../components/ResultPageNavBar";
 import SolidGaugeChart from "../components/SolidGaugeChart";
 import axios from "axios";
+import DOMPurify from "dompurify";
 
 const Result = () => {
   const { player_id, name, email, age, gender, grade } =
@@ -128,6 +129,8 @@ const Result = () => {
       </div>
     );
 
+  const mySafeHTML = DOMPurify.sanitize(result.result_label_summary);
+
   return (
     <div className="relative">
       <ResultPageNavBar report_id={result.report_id} />
@@ -137,7 +140,7 @@ const Result = () => {
             {name}
           </span>
           <div className="bg-white flex flex-col lg:flex-row justify-center rounded-md gap-2 lg:gap-20 w-[95%] mx-auto">
-            <div className="bg-white flex flex-col rounded-md w-full lg:w-[65%] gap-5 justify-start">
+            <div className="bg-white flex flex-col rounded-md w-full lg:min-w-[65%] gap-5 justify-start">
               <div className="grid lg:grid-cols-2 gap-2 p-2 w-full lg:justify-center items-center text-lg lg:text-2xl">
                 <div className="row-span-6 flex gap-5 items-center">
                   <div className="col-span-3 flex flex-col gap-4">
@@ -175,9 +178,9 @@ const Result = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-5 items-center w-[95%] lg:w-[35%]">
+            <div className="flex flex-col gap-5 items-center w-[95%] lg:max-w-[35%]">
               <div className="flex flex-col justify-center items-center gap-1">
-                <span className="text-lg lg:text-2xl font-semibold">
+                <span className="text-lg lg:text-2xl font-semibold text-center">
                   Total Executive Functioning (EF) Score
                 </span>
                 <div className="w-[120px]">
@@ -187,11 +190,11 @@ const Result = () => {
             </div>
           </div>
           <div className="bg-white flex flex-col lg:flex-row justify-start rounded-md gap-5 lg:gap-20 w-[95%] mx-auto">
-            <span
-              className="lg:my-2 text-black text-lg lg:text-2xl mx-auto break-words text-left border-2 border-blue-400 p-2 rounded-md shadow-md"
-              dangerouslySetInnerHTML={{ __html: result.result_label_summary }}
-            ></span>
-            <div className="flex flex-col gap-2 w-[90%] lg:w-[30%]">
+            <div
+              className="lg:my-2 lg:w-[70%] text-black text-lg lg:text-2xl mx-auto break-words text-left border-2 border-blue-400 p-2 rounded-md shadow-md result-label-summary"
+              dangerouslySetInnerHTML={{ __html: mySafeHTML }}
+            ></div>
+            <div className="flex flex-col gap-2 w-[90%] lg:w-[30%] mx-2 lg:mx-0">
               <span className="font-semibold underline">
                 Interpretation of Total EF Score
               </span>
@@ -207,12 +210,12 @@ const Result = () => {
                   <li> : Severe EF issues</li>
                 </ul>
               </div>
+              <div className="mx-2 bg-white lg:justify-self-end rounded-md">
+                * A score below 65 can reflect areas of difficulty in specific
+                competency areas. Please review the subtest scores for
+                additional details.
+              </div>
             </div>
-          </div>
-          <div className="mx-5 bg-white justify-self-end rounded-md w-[95%] lg:w-[29%] 2xl:w-[30%] 2xl:ml-0 2xl:mr-5 lg:mx-0">
-            * A score below 65 can reflect areas of difficulty in specific
-            competency areas. Please review the subtest scores for additional
-            details.
           </div>
         </div>
       </div>
