@@ -40,7 +40,7 @@ const LoginForm = () => {
   } = useContext(UserContext);
 
   const handleSubmit = async (e) => {
-    console.log(formData);
+    // console.log(formData);
     setLoading(true);
     setName(formData.fullName);
     setEmail(formData.email);
@@ -101,7 +101,7 @@ const LoginForm = () => {
       code: formData.testCode,
       school_name: "NA",
     };
-    console.log(data);
+    // console.log(data);
 
     if (formData.testCode === "EFC08") {
       // console.log("EFC08");
@@ -174,7 +174,7 @@ const LoginForm = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
     // console.log(formData);
   };
-  console.log(formData)
+  // console.log(formData)
 
   const handleStep = (e) => {
     e.preventDefault();
