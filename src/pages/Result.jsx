@@ -8,8 +8,18 @@ import axios from "axios";
 import DOMPurify from "dompurify";
 
 const Result = () => {
-  const { player_id, name, email, age, gender, grade } =
-    useContext(UserContext);
+  const {
+    player_id,
+    name,
+    email,
+    age,
+    gender,
+    grade,
+    testTakerType,
+    testTakerName,
+    testTakerEmail,
+    testTakerLabel,
+  } = useContext(UserContext);
   const [result, setResult] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -134,7 +144,18 @@ const Result = () => {
   return (
     <div className="relative">
       <ResultPageNavBar report_id={result.report_id} />
-      <div className="h-full w-full overflow-auto flex flex-col justify-center items-center gap-4 lg:py-0 py-2 lg:p-5">
+      <div className="h-full w-full overflow-auto flex flex-col justify-center items-center lg:pt-2 py-2 lg:p-5">
+        {testTakerType && (
+          <div className="w-[90%] flex justify-between items-center text-xl font-semibold">
+            <span>
+              Test taken by{" "}
+              <button className="p-1 lg:p-1 lg:px-3 text-base lg:text-xl border rounded-lg mr-4 bg-gradient-to-r from-gsl-light-green to-gsl-dark-orange text-white capitalize">
+                {testTakerType ? testTakerLabel : "Learner"}
+              </button>
+              | {testTakerName} ({testTakerEmail})
+            </span>
+          </div>
+        )}
         <div className="relative w-[90%] lg:m-5 lg:p-5 shadow-2xl border-t-4 border-t-gsl-dark-orange bg-white flex flex-col justify-center rounded-md gap-2 mb-10 lg:mb-20 lg:last:items-end">
           <span className="text-xl lg:text-3xl font-bold mx-5 lg:mx-10 self-start">
             {name}

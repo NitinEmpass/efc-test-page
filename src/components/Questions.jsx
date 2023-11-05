@@ -22,7 +22,7 @@ import { NumberList } from "./NumberList";
 
 const Questions = () => {
   const navigate = useNavigate();
-  const { player_id, questions, age } = useContext(UserContext);
+  const { player_id, questions, age, testTakerType } = useContext(UserContext);
   // const player_id = "1";
   const [current, setCurrent] = useState(0);
   const [checkboxArray, setCheckboxArray] = useState([]);
@@ -79,8 +79,10 @@ const Questions = () => {
       try {
         // const soundModule = await import(
         //   `../assets/sounds/que_${questions[current].id}_title.mp3`
-        // );̥
-        setSoundTitle(questions[current].que_link);
+        // );
+        testTakerType
+          ? setSoundTitle(questions[current].que_title_third_person_link)
+          : setSoundTitle(questions[current].que_link);
       } catch (error) {
         console.error(
           `Error loading sound for question ${questions[current].id}:`,
@@ -307,7 +309,9 @@ const Questions = () => {
                     onCut={(e) => e.preventDefault()} // Prevent cut
                     onContextMenu={(e) => e.preventDefault()} // Prevent right-click
                   >
-                    {questions[current].que_title}
+                    {testTakerType
+                      ? questions[current].que_title_third_person
+                      : questions[current].que_title}
                   </h3>
                 </div>
                 <div className="hidden lg:flex relative gap-4">

@@ -51,7 +51,7 @@ const Footer = () => {
             <img
               src={MMM}
               alt="MMM"
-              width={35}
+              width={70}
               className="rounded-md cursor-pointer"
             />
           </a>

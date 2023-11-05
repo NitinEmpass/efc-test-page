@@ -11,6 +11,10 @@ export const UserProvider = ({ children }) => {
   const [gender, setGender] = useState("");
   const [grade, setGrade] = useState("");
   const [res, setRes] = useState([]);
+  const [testTakerType, setTestTakerType] = useState("");
+  const [testTakerEmail, setTestTakerEmail] = useState("");
+  const [testTakerName, setTestTakerName] = useState("");
+  const [testTakerLabel, setTestTakerLabel] = useState("");
 
   return (
     <UserContext.Provider
@@ -31,6 +35,14 @@ export const UserProvider = ({ children }) => {
         setGrade,
         res,
         setRes,
+        testTakerType,
+        setTestTakerType,
+        testTakerEmail,
+        setTestTakerEmail,
+        testTakerName,
+        setTestTakerName,
+        testTakerLabel,
+        setTestTakerLabel,
       }}
     >
       {children}
