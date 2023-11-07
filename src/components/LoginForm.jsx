@@ -204,7 +204,7 @@ const LoginForm = () => {
         >
           <div className="flex items-center gap-2 text-lg">
             <label htmlFor="onBehalf">
-              Are you taking this screener on behalf of a learner?
+              Are you taking this screener on behalf of another person?
             </label>
             <div className="flex flex-wrap justify-between items-center">
               <div className="flex items-center justify-between w-full">
