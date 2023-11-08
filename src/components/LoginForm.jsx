@@ -202,12 +202,12 @@ const LoginForm = () => {
             steps === 0 ? "flex flex-col gap-4 w-full animate-fade" : "hidden"
           }
         >
-          <div className="flex items-center gap-2 text-lg">
+          <div className="flex flex-col gap-2 text-lg">
             <label htmlFor="onBehalf">
               Are you taking this screener on behalf of another person?
             </label>
-            <div className="flex flex-wrap justify-between items-center">
-              <div className="flex items-center justify-between w-full">
+            <div className="flex items-center w-full gap-4">
+              <div className="flex items-center gap-2">
                 <label htmlFor="teacher">Yes</label>
                 <input
                   type="radio"
@@ -223,7 +223,7 @@ const LoginForm = () => {
                   className="h-4 w-4"
                 />
               </div>
-              <div className="flex items-center justify-between w-full">
+              <div className="flex items-center gap-2">
                 <label htmlFor="parent">No</label>
                 <input
                   type="radio"
