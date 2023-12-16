@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Rules from "./pages/Rules";
 import Questions from "./components/Questions";
@@ -15,7 +15,9 @@ const MaintenanceMessage = () => {
       <h1 className="text-3xl font-bold">
         Website is currently under maintenance
       </h1>
-      <h1 className="text-xl font-bold text-gsl-dark-orange">We will be back shortly.</h1>
+      <h1 className="text-xl font-bold text-gsl-dark-orange">
+        We will be back shortly.
+      </h1>
     </div>
   );
 };
@@ -25,6 +27,15 @@ function App() {
   axios.defaults.withCredentials = true;
 
   const isUnderMaintenance = true;
+
+  // Set this to true if you want to redirect users
+  const isRedirecting = true;
+
+  if (isRedirecting) {
+    // Redirect users to the new website
+    window.location.href = "https://efcs.mymemorymentor.com/";
+    return null;
+  }
 
   return (
     <div className="min-h-screen max-w-full overflow-hidden overflow-y-auto scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-300">
